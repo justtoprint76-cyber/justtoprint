@@ -1,7 +1,18 @@
-import dynamic from 'next/dynamic'
+import dynamic from 'next/dynamic';
 
-const Storefront = dynamic(() => import('../components/Storefront'), { ssr: false })
+// Home hero nera & oro
+const HomePage = dynamic(() => import('../components/HomePage'), { ssr: false });
+
+// Storefront (già creato): lo mostriamo sotto la hero per ora
+const Storefront = dynamic(() => import('../components/Storefront'), { ssr: false });
 
 export default function Home() {
-  return <Storefront />
+  return (
+    <>
+      <HomePage />
+      <div id="shop">
+        <Storefront />
+      </div>
+    </>
+  );
 }
