@@ -1,8 +1,7 @@
+import dynamic from 'next/dynamic'
+
+const Storefront = dynamic(() => import('../components/Storefront'), { ssr: false })
+
 export default function Home() {
-  return (
-    <main style={{ textAlign: 'center', marginTop: '50px' }}>
-      <h1>JUSTTOPRINT 🖤</h1>
-      <p>Il tuo e-commerce è online, in costruzione!</p>
-    </main>
-  );
+  return <Storefront />
 }
