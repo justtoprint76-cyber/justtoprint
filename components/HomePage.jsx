@@ -19,11 +19,12 @@ export default function HomePage() {
 
           {/* Gruppo Khanda + I */}
           <span className="flex flex-col items-center leading-none -mx-[0.05em]">
-            <img
-              src="/khanda.png"
-              alt="Khanda"
-              className="w-[28px] h-[28px] mb-[-6px] opacity-95 drop-shadow-[0_0_5px_rgba(0,0,0,0.35)]"
-            />
+           <img
+  src="/khanda.png"
+  alt="Khanda"
+  className="w-[28px] h-[28px] mb-[-10px] relative -left-[1px] opacity-95 drop-shadow-[0_0_5px_rgba(0,0,0,0.35)]"
+/>
+
             <span
               className="text-5xl sm:text-7xl font-extrabold tracking-[0.2em] bg-clip-text text-transparent leading-none"
               style={gold}
