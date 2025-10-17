@@ -21,11 +21,12 @@ export default function HomePage() {
             >
               I
               {/* Khanda sopra la I */}
-              <img
-                src="/khanda.png"
-                alt="Khanda"
-                className="pointer-events-none select-none absolute -top-12 left-1/2 -translate-x-1/2 w-10 h-10 opacity-90"
-              />
+             <img
+  src="/khanda.png"
+  alt="Khanda"
+  className="pointer-events-none select-none absolute -top-8 left-1/2 -translate-x-1/2 w-8 h-8 opacity-90"
+/>
+
             </span>
             NT
           </span>
