@@ -1,39 +1,46 @@
 export default function HomePage() {
+  const gold = {
+    backgroundImage:
+      "linear-gradient(180deg, #ffd86a 0%, #d4af37 45%, #a38118 100%)",
+  };
+
   return (
     <main className="min-h-screen bg-black text-white flex items-center justify-center px-6">
       <div className="max-w-5xl w-full text-center">
-        {/* BRAND + KHANDA sopra la I */}
-        <h1 className="relative inline-block text-5xl sm:text-7xl font-extrabold tracking-[0.2em]">
+        {/* ===== BRAND LINE (senza absolute) ===== */}
+        <div className="relative flex items-end justify-center gap-[0.2em]">
+          {/* JUSTTOPR */}
           <span
-            className="bg-clip-text text-transparent"
-            style={{
-              backgroundImage:
-                "linear-gradient(180deg, #ffd86a 0%, #d4af37 45%, #a38118 100%)",
-            }}
+            className="text-5xl sm:text-7xl font-extrabold tracking-[0.2em] bg-clip-text text-transparent"
+            style={gold}
           >
-           JUSTTOPR
-<span className="inline-flex flex-col items-center -mx-[0.05em] leading-none relative">
-  {/* Khanda sopra la I */}
-  <img
-    src="/khanda.png"
-    alt="Khanda"
-    className="w-[30px] h-[30px] mb-[-6px] opacity-95 drop-shadow-[0_0_5px_rgba(0,0,0,0.4)]"
-  />
-  <span
-    className="bg-clip-text text-transparent leading-none"
-    style={{
-      backgroundImage:
-        "linear-gradient(180deg, #ffd86a 0%, #d4af37 45%, #a38118 100%)",
-    }}
-  >
-    I
-  </span>
-</span>
-NT
-
-
+            JUSTTOPR
           </span>
-        </h1>
+
+          {/* Gruppo Khanda + I */}
+          <span className="flex flex-col items-center leading-none -mx-[0.05em]">
+            <img
+              src="/khanda.png"
+              alt="Khanda"
+              className="w-[28px] h-[28px] mb-[-6px] opacity-95 drop-shadow-[0_0_5px_rgba(0,0,0,0.35)]"
+            />
+            <span
+              className="text-5xl sm:text-7xl font-extrabold tracking-[0.2em] bg-clip-text text-transparent leading-none"
+              style={gold}
+            >
+              I
+            </span>
+          </span>
+
+          {/* NT */}
+          <span
+            className="text-5xl sm:text-7xl font-extrabold tracking-[0.2em] bg-clip-text text-transparent"
+            style={gold}
+          >
+            NT
+          </span>
+        </div>
+        {/* ===== /BRAND LINE ===== */}
 
         {/* Slogan */}
         <p className="mt-6 text-base sm:text-lg text-neutral-300">
@@ -45,11 +52,7 @@ NT
           <a
             href="#shop"
             className="px-6 py-3 rounded-full font-semibold"
-            style={{
-              background:
-                "linear-gradient(180deg, #ffd86a 0%, #d4af37 45%, #a38118 100%)",
-              color: "#000",
-            }}
+            style={{ background: gold.backgroundImage, color: "#000" }}
           >
             Shop Now
           </a>
@@ -68,3 +71,4 @@ NT
     </main>
   );
 }
+
