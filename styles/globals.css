@@ -5,11 +5,12 @@
 /* ---------- JUSTTOPRINT STYLE ---------- */
 
 html, body {
-  background: radial-gradient(circle at 30% 20%, #2a1b00, #000000 60%), 
-              linear-gradient(135deg, #c6a649 0%, #000 100%);
-  background-blend-mode: screen;
-  background-attachment: fixed;
-  background-size: cover;
+  background-color: #0d0a00;
+  background-image:
+    radial-gradient(circle, rgba(212,175,55,0.12) 1px, transparent 1px),
+    radial-gradient(circle, rgba(212,175,55,0.08) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
   color: white;
 }
 
