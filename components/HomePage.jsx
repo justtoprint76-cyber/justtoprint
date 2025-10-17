@@ -11,25 +11,26 @@ export default function HomePage() {
                 "linear-gradient(180deg, #ffd86a 0%, #d4af37 45%, #a38118 100%)",
             }}
           >
-            JUSTTOPR
-            <span className="inline-flex flex-col items-center -mx-[0.06em] leading-none relative">
-              {/* Khanda PNG */}
-              <img
-                src="/khanda.png"
-                alt="Khanda"
-                className="pointer-events-none select-none absolute -top-[26px] left-1/2 -translate-x-1/2 w-7 h-7 opacity-95 drop-shadow-[0_0_5px_rgba(0,0,0,0.3)]"
-              />
-              <span
-                className="bg-clip-text text-transparent leading-none"
-                style={{
-                  backgroundImage:
-                    "linear-gradient(180deg, #ffd86a 0%, #d4af37 45%, #a38118 100%)",
-                }}
-              >
-                I
-              </span>
-            </span>
-            NT
+           JUSTTOPR
+<span className="inline-flex flex-col items-center -mx-[0.04em] leading-none">
+  {/* Khanda sopra la I */}
+  <img
+    src="/khanda.png"
+    alt="Khanda"
+    className="w-8 h-8 mb-[-12px] opacity-95 drop-shadow-[0_0_5px_rgba(0,0,0,0.3)]"
+  />
+  <span
+    className="bg-clip-text text-transparent leading-none"
+    style={{
+      backgroundImage:
+        "linear-gradient(180deg, #ffd86a 0%, #d4af37 45%, #a38118 100%)",
+    }}
+  >
+    I
+  </span>
+</span>
+NT
+
           </span>
         </h1>
 
