@@ -12,12 +12,12 @@ export default function HomePage() {
             }}
           >
             JUSTTOPR
-            <span className="inline-flex flex-col items-center align-top -mx-[0.06em] leading-none">
+            <span className="inline-flex flex-col items-center -mx-[0.06em] leading-none relative">
               {/* Khanda PNG (deve essere in /public/khanda.png) */}
               <img
                 src="/khanda.png"
                 alt="Khanda"
-                className="pointer-events-none select-none w-9 h-9 mb-[-4px] opacity-95 drop-shadow-[0_0_6px_rgba(0,0,0,0.25)]"
+                className="pointer-events-none select-none absolute -top-[36px] left-1/2 -translate-x-1/2 w-8 h-8 opacity-95 drop-shadow-[0_0_6px_rgba(0,0,0,0.25)]"
               />
               <span
                 className="bg-clip-text text-transparent leading-none"
