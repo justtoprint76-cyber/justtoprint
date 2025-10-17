@@ -12,37 +12,14 @@ export default function HomePage() {
             }}
           >
             JUSTTOPR
-<span className="relative inline-block">
-  <img
-    src="/khanda.png"
-    alt="Khanda"
-    className="absolute -top-10 left-1/2 transform -translate-x-1/2 w-10 h-10 opacity-90"
-  />
-  I
-</span>
-NT
-
+            <span className="relative inline-block">
+              {/* KHANDA sopra la I */}
+              <img
+                src="/khanda.png"
+                alt="Khanda"
+                className="absolute -top-10 left-1/2 -translate-x-1/2 w-10 h-10 opacity-90 transform"
+              />
               I
-              {/* KHANDA dorata sopra la I */}
-              <span className="absolute -top-10 left-1/2 -translate-x-1/2">
-                <svg
-                  width="42"
-                  height="42"
-                  viewBox="0 0 64 64"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  {/* Chakkar (cerchio) */}
-                  <circle cx="32" cy="28" r="16" fill="#d4af37" />
-                  <circle cx="32" cy="28" r="12" fill="#000000" />
-                  {/* Spada centrale (Khanda) semplificata */}
-                  <rect x="30.5" y="10" width="3" height="24" fill="#d4af37" />
-                  <rect x="28" y="10" width="9" height="3" fill="#d4af37" />
-                  <rect x="30.5" y="34" width="3" height="8" fill="#d4af37" />
-                  {/* Due lame curve laterali stilizzate */}
-                  <path d="M14 22 C18 32, 18 36, 14 44" fill="none" stroke="#d4af37" strokeWidth="4" />
-                  <path d="M50 22 C46 32, 46 36, 50 44" fill="none" stroke="#d4af37" strokeWidth="4" />
-                </svg>
-              </span>
             </span>
             NT
           </span>
@@ -74,7 +51,6 @@ NT
           </a>
         </div>
 
-        {/* HINT shop (sezione demo più giù nella pagina Storefront) */}
         <p className="mt-4 text-xs text-neutral-500">
           Scorri più giù per lo shop demo • Prodotti reali in arrivo
         </p>
@@ -82,3 +58,4 @@ NT
     </main>
   );
 }
+
