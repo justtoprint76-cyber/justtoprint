@@ -22,8 +22,9 @@ export default function HomePage() {
        <img
   src="/khanda.png"
   alt="Khanda"
-  className="w-[26px] h-[26px] relative top-[10px] left-[-7px] opacity-95 drop-shadow-[0_0_5px_rgba(0,0,0,0.4)]"
+  className="w-[28px] h-[25px] relative top-[10px] left-[-6px] opacity-95 drop-shadow-[0_0_5px_rgba(0,0,0,0.4)]"
 />
+
 
 
 
