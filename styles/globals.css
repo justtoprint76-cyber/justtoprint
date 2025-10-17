@@ -4,15 +4,37 @@
 
 /* ---------- JUSTTOPRINT STYLE ---------- */
 
-html, body {
-  background-color: #0d0a00;
-  background-image:
-    radial-gradient(circle, rgba(212,175,55,0.12) 1px, transparent 1px),
-    radial-gradient(circle, rgba(212,175,55,0.08) 1px, transparent 1px);
-  background-size: 40px 40px;
-  background-position: 0 0, 20px 20px;
-  color: white;
+html, /* Effetto bagliore dorato dietro il logo */
+.logo-glow {
+  position: relative;
+  display: inline-block;
 }
+
+.logo-glow::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 250px;
+  height: 250px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(212,175,55,0.3) 0%, transparent 70%);
+  filter: blur(60px);
+  animation: pulseGlow 4s ease-in-out infinite;
+  z-index: -1;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.5;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.15);
+  }
+}
+
 
 /* Oro elegante per dettagli */
 :root {
