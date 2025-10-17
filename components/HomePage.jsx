@@ -12,12 +12,12 @@ export default function HomePage() {
             }}
           >
            JUSTTOPR
-<span className="inline-flex flex-col items-center -mx-[0.04em] leading-none">
+<span className="inline-flex flex-col items-center -mx-[0.05em] leading-none relative">
   {/* Khanda sopra la I */}
   <img
     src="/khanda.png"
     alt="Khanda"
-    className="w-8 h-8 mb-[-12px] opacity-95 drop-shadow-[0_0_5px_rgba(0,0,0,0.3)]"
+    className="w-[30px] h-[30px] mb-[-6px] opacity-95 drop-shadow-[0_0_5px_rgba(0,0,0,0.4)]"
   />
   <span
     className="bg-clip-text text-transparent leading-none"
@@ -30,6 +30,7 @@ export default function HomePage() {
   </span>
 </span>
 NT
+
 
           </span>
         </h1>
