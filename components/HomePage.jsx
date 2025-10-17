@@ -11,7 +11,17 @@ export default function HomePage() {
                 "linear-gradient(180deg, #ffd86a 0%, #d4af37 45%, #a38118 100%)",
             }}
           >
-            JUSTTOPR<span className="relative inline-block">
+            JUSTTOPR
+<span className="relative inline-block">
+  <img
+    src="/khanda.png"
+    alt="Khanda"
+    className="absolute -top-10 left-1/2 transform -translate-x-1/2 w-10 h-10 opacity-90"
+  />
+  I
+</span>
+NT
+
               I
               {/* KHANDA dorata sopra la I */}
               <span className="absolute -top-10 left-1/2 -translate-x-1/2">
