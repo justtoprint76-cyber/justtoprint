@@ -3,34 +3,28 @@ export default function HomePage() {
     <main className="min-h-screen bg-black text-white flex items-center justify-center px-6">
       <div className="text-center">
         {/* BRAND + KHANDA */}
-        <h1 className="relative inline-block text-5xl sm:text-7xl font-extrabold tracking-[0.2em]">
-          <span
-            className="bg-clip-text text-transparent"
-            style={{
-              backgroundImage:
-                "linear-gradient(180deg, #ffd86a 0%, #d4af37 45%, #a38118 100%)",
-            }}
-          >
-            JUSTTOPR
-            <span
-              className="relative inline-block bg-clip-text text-transparent"
-              style={{
-                backgroundImage:
-                  "linear-gradient(180deg, #ffd86a 0%, #d4af37 45%, #a38118 100%)",
-              }}
-            >
-              I
-              {/* Khanda sopra la I */}
-             <img
-  src="/khanda.png"
-  alt="Khanda"
-  className="pointer-events-none select-none absolute -top-8 left-1/2 -translate-x-1/2 w-8 h-8 opacity-90"
-/>
+<h1 className="relative inline-block text-5xl sm:text-7xl font-extrabold tracking-[0.2em]">
+  <span
+    className="bg-clip-text text-transparent"
+    style={{
+      backgroundImage:
+        "linear-gradient(180deg, #ffd86a 0%, #d4af37 45%, #a38118 100%)",
+    }}
+  >
+    JUSTTOPR
+    <span className="-mx-[0.08em] relative inline-block align-top">
+      {/* Khanda sopra la I */}
+      <img
+        src="/khanda.png"
+        alt="Khanda"
+        className="pointer-events-none select-none absolute -top-7 left-1/2 -translate-x-1/2 ml-[1px] w-9 h-9 opacity-95 drop-shadow-[0_0_6px_rgba(0,0,0,0.25)]"
+      />
+      <span className="leading-none">I</span>
+    </span>
+    NT
+  </span>
+</h1>
 
-            </span>
-            NT
-          </span>
-        </h1>
 
         <p className="mt-4 text-lg text-neutral-400">
           Wear Your Roots. — Punjabi Spirit • Modern Streetwear
