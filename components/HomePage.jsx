@@ -17,7 +17,7 @@ export default function HomePage() {
               w-full
               max-w-[680px]
               h-auto
-              scale-[1.18]
+              scale-[1.25]
               sm:scale-100
               sm:max-w-[1050px]
               lg:max-w-[1150px]
