@@ -25,17 +25,32 @@ export default function HomePage() {
           />
         </div>
 
-        {/* TAGLINE (più vicino al logo) */}
-        <p className="mt-2 text-[12px] tracking-[0.32em] text-[#7A7267]">
-          MODERN PUNJABI STREETWEAR
-        </p>
+       {/* TAGLINE */}
+<p className="
+  mt-2
+  text-[14px]
+  sm:text-[12px]
+  tracking-[0.28em]
+  text-[#7A7267]
+">
+  MODERN PUNJABI STREETWEAR
+</p>
 
-        {/* DESCRIZIONE (più vicino) */}
-        <p className="mt-1 text-[13px] tracking-[0.08em] text-[#9A9388] max-w-[520px] leading-relaxed">
-          A cultural project inspired by Punjabi heritage.
-          <br />
-          Collection coming soon.
-        </p>
+{/* DESCRIZIONE */}
+<p className="
+  mt-1
+  sm:mt-3
+  text-[14px]
+  sm:text-[13px]
+  tracking-[0.08em]
+  text-[#9A9388]
+  max-w-[520px]
+  leading-relaxed
+">
+  A cultural project inspired by Punjabi heritage.
+  <br />
+  Collection coming soon.
+</p>
       </main>
     </section>
   );
