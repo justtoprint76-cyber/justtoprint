@@ -5,6 +5,9 @@ export default function About() {
         <p className="text-[12px] tracking-[0.22em] text-[#8A8174]">
           ABOUT
         </p>
+<p className="text-[12px] tracking-[0.22em] text-[#9A9388]">
+  ABOUT
+</p>
 
         <h1
   className="mt-8 text-[34px] sm:text-[40px] leading-[1.2] tracking-[0.04em]"
