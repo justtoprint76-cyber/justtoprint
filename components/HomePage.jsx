@@ -11,18 +11,18 @@ export default function HomePage() {
         {/* LOGO (più grande su mobile senza tagli) */}
         <div className="w-full flex justify-center overflow-visible">
           <img
-            src="/justtoprint-logo.png"
-            alt="JUSTTOPRINT"
-            className="
-              w-full
-              max-w-[680px]
-              h-auto
-              scale-[1.25]
-              sm:scale-100
-              sm:max-w-[1050px]
-              lg:max-w-[1150px]
-            "
-          />
+  src="/justtoprint-logo.png"
+  alt="JUSTTOPRINT"
+  className="
+    w-full
+    max-w-[900px]
+    sm:max-w-[1050px]
+    lg:max-w-[1150px]
+    max-h-[40vh]
+    object-contain
+    mx-auto
+  "
+/>
         </div>
 
        {/* TAGLINE */}
