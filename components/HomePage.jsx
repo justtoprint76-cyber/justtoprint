@@ -31,6 +31,10 @@ export default function HomePage() {
         <p className="mt-8 text-[16px] tracking-[0.18em] text-[#7A7267]">
           MODERN PUNJABI STREETWEAR
         </p>
+        <p className="mt-4 text-[13px] tracking-[0.08em] text-[#9A9388] max-w-[520px]">
+  A cultural project inspired by Punjabi heritage. Collection coming soon.
+</p>
+
       </main>
     </section>
   );
