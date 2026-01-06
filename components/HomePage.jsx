@@ -23,13 +23,12 @@ export default function HomePage() {
       {/* HERO CENTRATA */}
       <main className="flex-1 flex flex-col items-center text-center px-6 pt-2">
         {/* LOGO grande su desktop, responsive su mobile */}
-       <img
+      <img
   src="/justtoprint-logo.png"
   alt="JUSTTOPRINT"
-  className="w-full max-w-[1050px] sm:max-w-[1150px]"
+  className="w-full max-w-[900px] sm:max-w-[1000px] h-auto -mt-8 sm:-mt-6"
 />
-
-       <p className="mt-8 text-[12px] tracking-[0.32em] text-[#7A7267]">
+      <p className="mt-8 text-[12px] tracking-[0.32em] text-[#7A7267]">
           MODERN PUNJABI STREETWEAR
         </p>
 
