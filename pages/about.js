@@ -6,10 +6,14 @@ export default function About() {
           ABOUT
         </p>
 
-        <h1 className="mt-6 text-[38px] sm:text-[46px] leading-tight tracking-[0.02em]">
-          JUSTTOPRINT is modern Punjabi streetwear —
-          designed with respect, identity, and intention.
-        </h1>
+        <h1
+  className="mt-8 text-[34px] sm:text-[40px] leading-[1.2] tracking-[0.04em]"
+  style={{ fontFamily: "serif", color: "#6B6256" }}
+>
+  JUSTTOPRINT is modern Punjabi streetwear,
+  designed with respect, identity, and intention.
+</h1>
+
 
         <p className="mt-10 text-[16px] leading-relaxed text-[#5A544B]">
           JUSTTOPRINT is a cultural project inspired by Punjabi heritage and Sikh values,
