@@ -1,6 +1,6 @@
 export default function Header() {
   return (
-    <header className="pt-10 pb-6 text-center">
+    <header className="pt-8 pb-2 text-center">
       <nav className="text-[14px] tracking-[0.15em] text-[#8A8174]">
         <a className="mx-4 no-underline text-inherit" href="/">
           HOME
