@@ -50,18 +50,29 @@ export default function Storefront() {
     }
   }
 
-  return (
-    <main className="min-h-screen bg-black text-white flex flex-col items-center justify-center px-6">
-      <h1 className="text-4xl font-bold mb-8 text-yellow-500">
-        JUSTTOPRINT Store
+return (
+  <section className="w-full">
+    <div className="w-full flex flex-col items-center justify-center">
+      <h1
+        className="text-[22px] sm:text-[26px] tracking-[0.12em] mb-10 text-center"
+        style={{ fontFamily: "serif", color: "#6B6256" }}
+      >
+        JUSTTOPRINT STORE
       </h1>
 
       {/* ✅ Prodotto demo */}
-      <div className="border border-neutral-800 p-6 rounded-xl mb-6 text-center">
-        <h2 className="text-2xl font-semibold mb-2">T-shirt JUSTTOPRINT</h2>
-        <p className="text-neutral-400 mb-3">€29.90</p>
+      <div className="w-full max-w-md border border-[#D9D0C3] bg-[#F7F2EA] p-7 rounded-2xl mb-8 text-center">
+        <h2 className="text-[18px] tracking-[0.08em] text-[#4A463F]">
+          T-shirt JUSTTOPRINT
+        </h2>
+
+        <p className="mt-3 text-[14px] tracking-[0.06em] text-[#7A7267]">
+          €29.90
+        </p>
+
         <button
-          className="bg-yellow-600 text-black px-5 py-2 rounded-lg hover:bg-yellow-500 font-medium"
+          className="mt-6 rounded-full px-6 py-3 text-[14px] tracking-[0.06em] font-medium"
+          style={{ background: "#C9B27C", color: "#2B2418" }}
           onClick={() =>
             addToCart({ name: "T-shirt JUSTTOPRINT", price: 29.9, qty: 1 })
           }
@@ -72,28 +83,37 @@ export default function Storefront() {
 
       {/* ✅ Carrello */}
       {cart.length > 0 && (
-        <div className="w-full max-w-md border border-neutral-800 p-6 rounded-xl">
-          <h2 className="text-2xl font-semibold mb-4">Il tuo carrello</h2>
-          <ul className="mb-4">
+        <div className="w-full max-w-md border border-[#D9D0C3] bg-[#F7F2EA] p-7 rounded-2xl">
+          <h2
+            className="text-[16px] tracking-[0.14em] mb-5"
+            style={{ fontFamily: "serif", color: "#6B6256" }}
+          >
+            IL TUO CARRELLO
+          </h2>
+
+          <ul className="mb-6 space-y-2">
             {cart.map((item, i) => (
-              <li key={i} className="flex justify-between text-neutral-300">
-                <span>
+              <li key={i} className="flex justify-between text-[#5A544B]">
+                <span className="text-[14px]">
                   {item.name} × {item.qty}
                 </span>
-                <span>€{(item.price * item.qty).toFixed(2)}</span>
+                <span className="text-[14px]">
+                  €{(item.price * item.qty).toFixed(2)}
+                </span>
               </li>
             ))}
           </ul>
 
           <button
-            className="w-full bg-neutral-900 text-white rounded-xl py-3 font-semibold hover:bg-neutral-800 transition"
+            className="w-full rounded-full py-3 text-[14px] tracking-[0.08em] font-semibold"
+            style={{ background: "#2B2418", color: "#F3EDE4" }}
             onClick={goToCheckout}
           >
-            Checkout
+            CHECKOUT
           </button>
         </div>
       )}
-    </main>
-  );
-}
+    </div>
+  </section>
+);
 
