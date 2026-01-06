@@ -2,7 +2,7 @@ export default function HomePage() {
   return (
     <section className="min-h-screen bg-[#F3EDE4] text-[#4A463F] flex flex-col">
       {/* HEADER (come prima) */}
-      <header className="pt-10 pb-6 text-center">
+      <header className="pt-8 pb-2 text-center">
         <nav className="text-[14px] tracking-[0.15em] text-[#8A8174]">
           <a className="mx-4 no-underline text-inherit" href="/">
             HOME
