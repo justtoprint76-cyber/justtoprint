@@ -1,28 +1,44 @@
-<HomePage />
+import dynamic from "next/dynamic";
+import Storefront from "../components/Storefront";
 
-<section className="bg-[#F3EDE4] text-[#4A463F] px-6">
-  <div className="max-w-5xl mx-auto pt-24 pb-14 text-center">
-    <p className="text-[12px] tracking-[0.22em] text-[#9A9388]">
-      THE COLLECTION
-    </p>
+const HomePage = dynamic(() => import("../components/HomePage"), {
+  ssr: false,
+});
 
-    <h2
-      className="mt-6 text-[28px] sm:text-[34px] leading-[1.2] tracking-[0.04em]"
-      style={{ fontFamily: "serif", color: "#6B6256" }}
-    >
-      Explore the pieces.
-    </h2>
+export default function Home() {
+  return (
+    <>
+      <HomePage />
 
-    <p className="mt-6 text-[15px] leading-relaxed text-[#7A7267] max-w-[62ch] mx-auto">
-      Designed with intention — modern silhouettes, cultural roots.
-    </p>
+      {/* STACCO EDITORIAL */}
+      <section className="bg-[#F3EDE4] text-[#4A463F] px-6">
+        <div className="max-w-5xl mx-auto pt-24 pb-14 text-center">
+          <p className="text-[12px] tracking-[0.22em] text-[#9A9388]">
+            THE COLLECTION
+          </p>
 
-    <div className="mt-12 h-px w-full bg-[#D9D0C3]" />
-  </div>
-</section>
+          <h2
+            className="mt-6 text-[28px] sm:text-[34px] leading-[1.2] tracking-[0.04em]"
+            style={{ fontFamily: "serif", color: "#6B6256" }}
+          >
+            Explore the pieces.
+          </h2>
 
-<div id="shop" className="bg-[#F3EDE4] px-6 pb-24">
-  <div className="max-w-5xl mx-auto">
-    <Storefront />
-  </div>
-</div>
+          <p className="mt-6 text-[15px] leading-relaxed text-[#7A7267] max-w-[62ch] mx-auto">
+            Designed with intention — modern silhouettes, cultural roots.
+          </p>
+
+          <div className="mt-12 h-px w-full bg-[#D9D0C3]" />
+        </div>
+      </section>
+
+      {/* SHOP */}
+      <div id="shop" className="bg-[#F3EDE4] px-6 pb-24">
+        <div className="max-w-5xl mx-auto">
+          <Storefront />
+        </div>
+      </div>
+    </>
+  );
+}
+
