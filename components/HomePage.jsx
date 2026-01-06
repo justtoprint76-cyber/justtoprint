@@ -21,7 +21,8 @@ export default function HomePage() {
       </header>
 
       {/* HERO */}
-      <main className="flex-1 flex flex-col items-center justify-center text-center px-6">
+     <main className="min-h-screen text-white flex items-center justify-center px-6 relative overflow-hidden pt-24 sm:pt-0">
+
         <img
           src="/justtoprint-logo.png"
           alt="JUSTTOPRINT"
