@@ -28,13 +28,13 @@ export default function HomePage() {
   alt="JUSTTOPRINT"
   className="w-full max-w-[1050px] sm:max-w-[1150px] h-auto -mt-12 sm:-mt-8"
 />
-      <p className="mt-8 text-[12px] tracking-[0.32em] text-[#7A7267]">
-          MODERN PUNJABI STREETWEAR
-        </p>
+      <p className="mt-4 text-[12px] tracking-[0.32em] text-[#7A7267]">
+  MODERN PUNJABI STREETWEAR
+</p>
 
-        <p className="mt-4 text-[13px] tracking-[0.08em] text-[#9A9388] max-w-[520px] leading-relaxed">
-          A cultural project inspired by Punjabi heritage. Collection coming soon.
-        </p>
+<p className="mt-2 text-[13px] tracking-[0.08em] text-[#9A9388] max-w-[520px] leading-relaxed">
+  A cultural project inspired by Punjabi heritage. Collection coming soon.
+</p>
       </main>
     </section>
   );
