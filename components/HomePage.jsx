@@ -36,12 +36,12 @@ export default function HomePage() {
         </div>
 
         {/* TESTO SOTTO (MOLTO VICINO AL LOGO) */}
-       <div className="mt-3 sm:mt-4">
-  <p className="tracking-[0.4em] text-[13px] sm:text-[16px] text-[#6F685E]">
+       <div className="mt-4 sm:mt-5">
+  <p className="tracking-[0.42em] text-[16px] sm:text-[20px] text-[#5F594F]">
     MODERN PUNJABI STREETWEAR
   </p>
 
-  <p className="mt-2 text-sm sm:text-base text-[#8C857A] max-w-2xl mx-auto leading-relaxed">
+  <p className="mt-3 text-base sm:text-lg text-[#7E776C] max-w-3xl mx-auto leading-relaxed">
     A cultural project inspired by Punjabi heritage.
     <br />
     Collection coming soon.
