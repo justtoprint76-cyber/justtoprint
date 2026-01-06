@@ -21,7 +21,7 @@ export default function HomePage() {
       </header>
 
       {/* HERO CENTRATA */}
-      <main className="flex-1 flex flex-col items-center justify-center text-center px-6 pt-6 sm:pt-0">
+      <main className="flex-1 flex flex-col items-center text-center px-6 pt-2">
         {/* LOGO grande su desktop, responsive su mobile */}
         <img
           src="/justtoprint-logo.png"
