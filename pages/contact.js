@@ -28,7 +28,7 @@ export default function Contact() {
               href="mailto:justtoprint76@gmail.com"
               className="inline-block mt-3 text-[16px] tracking-[0.06em] text-[#4A463F] no-underline"
             >
-              info@justtoprint.com
+              justtoprint76@gmail.com
             </a>
             <p className="mt-2 text-[13px] text-[#7A7267]">
               Business & customer care
