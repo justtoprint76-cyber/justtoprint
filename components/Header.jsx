@@ -1,12 +1,47 @@
-<div className="mt-3 sm:mt-4">
-  <p className="tracking-[0.4em] text-[13px] sm:text-[16px] text-[#6F685E]">
-    MODERN PUNJABI STREETWEAR
-  </p>
+"use client";
 
-  <p className="mt-2 text-sm sm:text-base text-[#8C857A] max-w-2xl mx-auto leading-relaxed">
-    A cultural project inspired by Punjabi heritage.
-    <br />
-    Collection coming soon.
-  </p>
-</div>
+export default function Header() {
+  return (
+    <header
+      style={{
+        width: "100%",
+        display: "flex",
+        justifyContent: "center",
+        paddingTop: "24px",
+        paddingBottom: "12px",
+        color: "#7A7267", // ← FORZATO (anti-oro)
+      }}
+    >
+      <nav
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: "40px",
+          fontSize: "14px",
+          letterSpacing: "0.35em",
+          textTransform: "uppercase",
+          color: "#7A7267", // ← FORZATO
+        }}
+      >
+        <a href="#home" style={{ color: "#7A7267" }}>
+          Home
+        </a>
+
+        <a href="#shop" style={{ color: "#7A7267" }}>
+          Shop
+        </a>
+
+        <span style={{ opacity: 0.4 }}>—</span>
+
+        <a href="#about" style={{ color: "#7A7267" }}>
+          About
+        </a>
+
+        <a href="#contact" style={{ color: "#7A7267" }}>
+          Contact
+        </a>
+      </nav>
+    </header>
+  );
+}
 
