@@ -1,58 +1,47 @@
-import Header from "./Header";
+"use client";
 
 export default function HomePage() {
   return (
-    <section className="min-h-screen bg-[#F3EDE4] text-[#4A463F] flex flex-col overflow-x-hidden">
-      {/* MENU */}
-      <Header />
+    <main className="flex-1 flex flex-col items-center text-center px-6 mt-6 sm:mt-2">
+      
+      {/* LOGO */}
+      <div
+        style={{
+          width: "100%",
+          maxWidth: "1150px",
+          height: "32vh",        // ⬅️ controlla quanto spazio occupa
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          margin: "0 auto",
+        }}
+      >
+        <img
+          src="/justtoprint-logo.png"
+          alt="JUSTTOPRINT"
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "contain",
+            display: "block",
+          }}
+        />
+      </div>
 
-      {/* HERO */}
-      <main className="flex-1 flex flex-col items-center text-center px-4 mt-4 sm:-mt-16">
-        {/* LOGO (più grande su mobile senza tagli) */}
-        <div className="w-full flex justify-center overflow-visible">
-          <img
-  src="/justtoprint-logo.png"
-  alt="JUSTTOPRINT"
-  className="
-    w-full
-    max-w-[900px]
-    sm:max-w-[1050px]
-    lg:max-w-[1150px]
-    max-h-[40vh]
-    object-contain
-    mx-auto
-  "
-/>
-        </div>
+      {/* TESTO SOTTO (VICINO AL LOGO) */}
+      <div className="mt-2 sm:mt-4">
+        <p className="tracking-[0.35em] text-[11px] sm:text-[13px] text-neutral-500">
+          MODERN PUNJABI STREETWEAR
+        </p>
 
-       {/* TAGLINE */}
-<p className="
-  mt-2
-  text-[14px]
-  sm:text-[12px]
-  tracking-[0.28em]
-  text-[#7A7267]
-">
-  MODERN PUNJABI STREETWEAR
-</p>
+        <p className="mt-2 text-xs sm:text-sm text-neutral-400 max-w-xl mx-auto">
+          A cultural project inspired by Punjabi heritage.
+          <br />
+          Collection coming soon.
+        </p>
+      </div>
 
-{/* DESCRIZIONE */}
-<p className="
-  mt-1
-  sm:mt-3
-  text-[14px]
-  sm:text-[13px]
-  tracking-[0.08em]
-  text-[#9A9388]
-  max-w-[520px]
-  leading-relaxed
-">
-  A cultural project inspired by Punjabi heritage.
-  <br />
-  Collection coming soon.
-</p>
-      </main>
-    </section>
+    </main>
   );
 }
 
