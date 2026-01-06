@@ -1,6 +1,6 @@
 export default function Header() {
   return (
-    <header className="pt-6 pb-0 text-center">
+    <header className="pt-4 pb-0 text-center">
       <nav className="text-[14px] tracking-[0.15em] text-[#8A8174]">
         <a className="mx-4 no-underline text-inherit" href="/">
           HOME
@@ -19,3 +19,4 @@ export default function Header() {
     </header>
   );
 }
+
