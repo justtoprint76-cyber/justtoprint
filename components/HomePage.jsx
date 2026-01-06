@@ -2,7 +2,7 @@ import Header from "./Header";
 
 export default function HomePage() {
   return (
-    <section className="min-h-screen bg-[#F3EDE4] text-[#4A463F] flex flex-col">
+    <section className="min-h-screen bg-[#F3EDE4] text-[#4A463F] flex flex-col overflow-x-hidden">
       {/* MENU */}
       <Header />
 
