@@ -26,7 +26,7 @@ export default function HomePage() {
       <img
   src="/justtoprint-logo.png"
   alt="JUSTTOPRINT"
-  className="w-full max-w-[900px] sm:max-w-[1000px] h-auto -mt-8 sm:-mt-6"
+  className="w-full max-w-[1050px] sm:max-w-[1150px] h-auto -mt-12 sm:-mt-8"
 />
       <p className="mt-8 text-[12px] tracking-[0.32em] text-[#7A7267]">
           MODERN PUNJABI STREETWEAR
