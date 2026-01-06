@@ -1,29 +1,36 @@
+import Header from "./Header";
+
 export default function HomePage() {
   return (
     <section className="min-h-screen bg-[#F3EDE4] text-[#4A463F] flex flex-col">
+      {/* MENU */}
+      <Header />
+
       {/* HERO */}
       <main className="flex-1 flex flex-col items-center text-center px-4 mt-4 sm:-mt-16">
-        {/* LOGO */}
-        <div className="w-full flex justify-center">
+        {/* LOGO (più grande su mobile senza tagli) */}
+        <div className="w-full flex justify-center overflow-visible">
           <img
             src="/justtoprint-logo.png"
             alt="JUSTTOPRINT"
             className="
               w-full
-              max-w-[620px]
+              max-w-[680px]
+              h-auto
+              scale-[1.18]
+              sm:scale-100
               sm:max-w-[1050px]
               lg:max-w-[1150px]
-              h-auto
             "
           />
         </div>
 
-        {/* TAGLINE */}
-        <p className="mt-3 text-[12px] tracking-[0.32em] text-[#7A7267]">
+        {/* TAGLINE (più vicino al logo) */}
+        <p className="mt-2 text-[12px] tracking-[0.32em] text-[#7A7267]">
           MODERN PUNJABI STREETWEAR
         </p>
 
-        {/* DESCRIZIONE */}
+        {/* DESCRIZIONE (più vicino) */}
         <p className="mt-1 text-[13px] tracking-[0.08em] text-[#9A9388] max-w-[520px] leading-relaxed">
           A cultural project inspired by Punjabi heritage.
           <br />
