@@ -1,22 +1,23 @@
+"use client";
+
 export default function Header() {
   return (
-    <header className="pt-4 pb-0 text-center">
-      <nav className="text-[14px] tracking-[0.15em] text-[#8A8174]">
-        <a className="mx-4 no-underline text-inherit" href="/">
-          HOME
+    <header className="w-full flex justify-center pt-6 pb-2">
+      <nav className="flex items-center gap-10 text-sm tracking-[0.35em] text-[#8A8378] uppercase">
+        <a href="#home" className="hover:text-black transition">
+          Home
         </a>
-        <span className="mx-2">—</span>
-        <a className="mx-4 no-underline text-inherit" href="/#shop">
-          SHOP
+        <a href="#shop" className="hover:text-black transition">
+          Shop
         </a>
-        <a className="mx-4 no-underline text-inherit" href="/about">
-          ABOUT
+        <span className="opacity-40">—</span>
+        <a href="#about" className="hover:text-black transition">
+          About
         </a>
-        <a className="mx-4 no-underline text-inherit" href="/contact">
-          CONTACT
+        <a href="#contact" className="hover:text-black transition">
+          Contact
         </a>
       </nav>
     </header>
   );
 }
-
