@@ -1,26 +1,12 @@
-"use client";
+<div className="mt-3 sm:mt-4">
+  <p className="tracking-[0.4em] text-[13px] sm:text-[16px] text-[#6F685E]">
+    MODERN PUNJABI STREETWEAR
+  </p>
 
-export default function Header() {
-  return (
-    <header className="w-full flex justify-center pt-6 pb-2">
-      <nav className="flex items-center gap-10 text-sm tracking-[0.35em] uppercase text-[#7A7267]">
-        <a href="#home" className="hover:text-[#4A463F] transition">
-          Home
-        </a>
-        <a href="#shop" className="hover:text-[#4A463F] transition">
-          Shop
-        </a>
-
-        <span className="opacity-40">—</span>
-
-        <a href="#about" className="hover:text-[#4A463F] transition">
-          About
-        </a>
-        <a href="#contact" className="hover:text-[#4A463F] transition">
-          Contact
-        </a>
-      </nav>
-    </header>
-  );
-}
+  <p className="mt-2 text-sm sm:text-base text-[#8C857A] max-w-2xl mx-auto leading-relaxed">
+    A cultural project inspired by Punjabi heritage.
+    <br />
+    Collection coming soon.
+  </p>
+</div>
 
