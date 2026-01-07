@@ -11,31 +11,31 @@ export default function Header() {
             text-[13px] sm:text-[14px]
             tracking-[0.22em] sm:tracking-[0.35em]
             uppercase
-            text-[#6F685E]
+            !text-[#6F685E]
           "
         >
           <li>
-            <a href="#home" className="hover:text-[#4A463F] transition">
+            <a href="#home" className="!text-[#6F685E] hover:!text-[#4A463F] transition">
               Home
             </a>
           </li>
 
           <li>
-            <a href="#shop" className="hover:text-[#4A463F] transition">
+            <a href="#shop" className="!text-[#6F685E] hover:!text-[#4A463F] transition">
               Shop
             </a>
           </li>
 
-          <li className="opacity-40 select-none">—</li>
+          <li className="opacity-40 select-none !text-[#6F685E]">—</li>
 
           <li>
-            <a href="#about" className="hover:text-[#4A463F] transition">
+            <a href="#about" className="!text-[#6F685E] hover:!text-[#4A463F] transition">
               About
             </a>
           </li>
 
           <li>
-            <a href="#contact" className="hover:text-[#4A463F] transition">
+            <a href="#contact" className="!text-[#6F685E] hover:!text-[#4A463F] transition">
               Contact
             </a>
           </li>
