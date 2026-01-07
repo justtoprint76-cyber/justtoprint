@@ -18,7 +18,7 @@ export default function HomePage() {
         </div>
 
        {/* TESTI */}
-<div className="-mt-12 sm:-mt-6">
+<div className="-mt-16 sm:-mt-8">
           <p className="tracking-[0.35em] text-[11px] sm:text-[15px] text-[#6F685E]">
             MODERN PUNJABI STREETWEAR
           </p>
