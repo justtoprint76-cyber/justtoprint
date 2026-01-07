@@ -9,7 +9,7 @@ export default function HomePage() {
       <Header />
 
       {/* HERO */}
-      <main className="flex flex-col items-center text-center px-6 mt-0 sm:mt-2">
+      <main className="flex flex-col items-center text-center px-6 -mt-8 sm:mt-2">
         {/* LOGO (grande su desktop, controllato su mobile) */}
         <div
           style={{
