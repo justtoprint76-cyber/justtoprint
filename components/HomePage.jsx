@@ -56,7 +56,7 @@ export default function HomePage() {
         @media (max-width: 639px) {
           .jtp-logo-box {
             height: min(52vh, 440px); /* HERO grande */
-            margin-top: -60px;        /* lo riporta su sotto al menu */
+            margin-top: -70px;        /* lo riporta su sotto al menu */
           }
         }
       `}</style>
