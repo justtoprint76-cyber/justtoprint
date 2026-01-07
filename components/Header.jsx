@@ -1,48 +1,124 @@
 "use client";
 
-export default function Header() {
+export default function Header({ compact = false }) {
   return (
-    <header className="w-full bg-[#F3EDE4]">
-      <nav className="w-full flex justify-center px-4 pt-4 sm:pt-6 pb-2 sm:pb-4">
-        <ul
-          className="
-            flex flex-wrap items-center justify-center
-            gap-x-7 gap-y-2 sm:gap-x-10
-            text-[13px] sm:text-[14px]
-            tracking-[0.22em] sm:tracking-[0.35em]
-            uppercase
-            !text-[#6F685E]
-          "
-        >
-          <li>
-            <a href="#home" className="!text-[#6F685E] hover:!text-[#4A463F] transition">
-              Home
-            </a>
-          </li>
+    <header className={`jtp-header ${compact ? "is-compact" : ""}`}>
+      <div className="jtp-inner">
+        {/* Logo piccolo: appare SOLO quando scrolli */}
+        <div className={`jtp-miniLogo ${compact ? "show" : ""}`}>
+          <img src="/justtoprint-logo.png" alt="JUSTTOPRINT" />
+        </div>
 
-          <li>
-            <a href="#shop" className="!text-[#6F685E] hover:!text-[#4A463F] transition">
-              Shop
-            </a>
-          </li>
+        {/* Menu */}
+        <nav className="jtp-nav" aria-label="Primary">
+          <a href="#home">HOME</a>
+          <a href="#shop">SHOP</a>
+          <span className="sep">—</span>
+          <a href="#about">ABOUT</a>
+          <a href="#contact">CONTACT</a>
+        </nav>
+      </div>
 
-          <li className="opacity-40 select-none !text-[#6F685E]">—</li>
+      <style jsx>{`
+        .jtp-header {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          z-index: 50;
+          background: transparent;
+          transition: background 280ms ease, box-shadow 280ms ease;
+        }
 
-          <li>
-            <a href="#about" className="!text-[#6F685E] hover:!text-[#4A463F] transition">
-              About
-            </a>
-          </li>
+        .jtp-header.is-compact {
+          background: rgba(243, 237, 228, 0.92);
+          backdrop-filter: blur(10px);
+          box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+        }
 
-          <li>
-            <a href="#contact" className="!text-[#6F685E] hover:!text-[#4A463F] transition">
-              Contact
-            </a>
-          </li>
-        </ul>
-      </nav>
+        .jtp-inner {
+          max-width: 1150px;
+          margin: 0 auto;
+          padding: 14px 18px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 10px;
+        }
+
+        .jtp-miniLogo {
+          height: 0;
+          opacity: 0;
+          transform: translateY(-6px) scale(0.98);
+          transition: opacity 260ms ease, transform 260ms ease, height 260ms ease;
+          overflow: hidden;
+        }
+
+        .jtp-miniLogo.show {
+          height: 40px; /* spazio per il logo piccolo */
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+
+        .jtp-miniLogo img {
+          height: 40px;
+          width: auto;
+          display: block;
+          object-fit: contain;
+        }
+
+        .jtp-nav {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 28px;
+          letter-spacing: 0.28em;
+          font-size: 12px;
+          color: #6f685e;
+          text-transform: uppercase;
+        }
+
+        .jtp-nav a {
+          color: inherit;
+          text-decoration: none;
+          transition: opacity 180ms ease;
+        }
+
+        .jtp-nav a:hover {
+          opacity: 0.7;
+        }
+
+        .sep {
+          opacity: 0.55;
+        }
+
+        /* Mobile: menu va su 2 righe in modo pulito */
+        @media (max-width: 639px) {
+          .jtp-inner {
+            padding: 14px 12px;
+            gap: 8px;
+          }
+
+          .jtp-nav {
+            gap: 18px;
+            font-size: 12px;
+            text-align: center;
+            flex-wrap: wrap;
+            justify-content: center;
+          }
+
+          .jtp-miniLogo.show {
+            height: 34px;
+          }
+
+          .jtp-miniLogo img {
+            height: 34px;
+          }
+        }
+      `}</style>
     </header>
   );
 }
+
 
 
