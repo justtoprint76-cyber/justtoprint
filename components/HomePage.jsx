@@ -29,7 +29,7 @@ export default function HomePage() {
       {/* HERO */}
       <main className="flex flex-col items-center text-center px-6 -mt-8 sm:mt-2">
         {/* LOGO grande */}
-        <div className="jtp-logo-box">
+        <div className="jtp-logo-box hero-logo">
           <img
             src="/justtoprint-logo.png"
             alt="JUSTTOPRINT"
@@ -38,7 +38,7 @@ export default function HomePage() {
         </div>
 
         {/* TESTI (come li hai sistemati tu) */}
-        <div className="-mt-16 sm:-mt-8">
+        <div className="-mt-16 sm:-mt-8 hero-text">
           <p className="tracking-[0.35em] text-[11px] sm:text-[15px] text-[#6F685E]">
             MODERN PUNJABI STREETWEAR
           </p>
