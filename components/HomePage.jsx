@@ -10,7 +10,6 @@ export default function HomePage() {
 
       {/* HERO */}
       <main className="flex flex-col items-center text-center px-6 -mt-8 sm:mt-2">
-        
         {/* LOGO */}
         <div className="jtp-logo-box">
           <img
@@ -39,7 +38,7 @@ export default function HomePage() {
         .jtp-logo-box {
           width: 100%;
           max-width: 1150px;
-          height: 320px; /* DESKTOP: IDENTICO a prima */
+          height: 320px; /* DESKTOP: identico */
           display: flex;
           align-items: center;
           justify-content: center;
@@ -53,10 +52,11 @@ export default function HomePage() {
           display: block;
         }
 
-        /* MOBILE: HERO VERO */
+        /* MOBILE: più HERO ma anche PIÙ SU */
         @media (max-width: 639px) {
           .jtp-logo-box {
-            height: min(55vh, 460px);
+            height: min(52vh, 440px); /* HERO grande */
+            margin-top: -28px;        /* lo riporta su sotto al menu */
           }
         }
       `}</style>
