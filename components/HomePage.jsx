@@ -12,16 +12,16 @@ export default function HomePage() {
       <main className="flex flex-col items-center text-center px-6 -mt-8 sm:mt-2">
         {/* LOGO (grande su desktop, controllato su mobile) */}
         <div
-          style={{
-            width: "100%",
-            maxWidth: "1150px",
-            height: "clamp(210px, 34vh, 320px)", // mobile più “statement” ma non esplode
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            margin: "0 auto",
-          }}
-        >
+  style={{
+    width: "100%",
+    maxWidth: "1150px",
+    height: "clamp(210px, 34vh, 320px)",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    margin: "0 auto",
+  }}
+>
           <img
             src="/justtoprint-logo.png"
             alt="JUSTTOPRINT"
