@@ -10,31 +10,17 @@ export default function HomePage() {
 
       {/* HERO */}
       <main className="flex flex-col items-center text-center px-6 -mt-8 sm:mt-2">
-        {/* LOGO (grande su desktop, controllato su mobile) */}
-        <div
-  style={{
-    width: "100%",
-    maxWidth: "1150px",
-    height: "clamp(210px, 34vh, 320px)",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    margin: "0 auto",
-  }}
->
+        
+        {/* LOGO */}
+        <div className="jtp-logo-box">
           <img
             src="/justtoprint-logo.png"
             alt="JUSTTOPRINT"
-            style={{
-              width: "100%",
-              height: "100%",
-              objectFit: "contain",
-              display: "block",
-            }}
+            className="jtp-logo-img"
           />
         </div>
 
-        {/* TESTI SOTTO (vicinissimi al logo su mobile, desktop elegante) */}
+        {/* TESTI SOTTO */}
         <div className="-mt-6 sm:-mt-2">
           <p className="tracking-[0.35em] text-[11px] sm:text-[15px] text-[#6F685E]">
             MODERN PUNJABI STREETWEAR
@@ -47,6 +33,33 @@ export default function HomePage() {
           </p>
         </div>
       </main>
+
+      {/* CSS MIRATO (mobile ≠ desktop) */}
+      <style jsx>{`
+        .jtp-logo-box {
+          width: 100%;
+          max-width: 1150px;
+          height: 320px; /* DESKTOP: IDENTICO a prima */
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 auto;
+        }
+
+        .jtp-logo-img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          display: block;
+        }
+
+        /* MOBILE: HERO VERO */
+        @media (max-width: 639px) {
+          .jtp-logo-box {
+            height: min(55vh, 460px);
+          }
+        }
+      `}</style>
     </section>
   );
 }
