@@ -3,7 +3,7 @@
 export default function Header() {
   return (
     <header className="w-full bg-[#F3EDE4]">
-      <nav className="w-full flex justify-center px-4 pt-6 pb-4">
+      <nav className="w-full flex justify-center px-4 pt-4 sm:pt-6 pb-2 sm:pb-4">
         <ul
           className="
             flex flex-wrap items-center justify-center
