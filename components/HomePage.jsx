@@ -84,6 +84,29 @@ export default function HomePage() {
           }
         }
       `}</style>
+      <style jsx>{`
+  /* HERO ANIMATION */
+  .hero-logo {
+    opacity: 0;
+    transform: translateY(14px);
+    animation: heroFadeUp 0.9s ease-out forwards;
+  }
+
+  .hero-text {
+    opacity: 0;
+    transform: translateY(18px);
+    animation: heroFadeUp 0.9s ease-out forwards;
+    animation-delay: 0.35s;
+  }
+
+  @keyframes heroFadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+`}</style>
+
     </section>
   );
 }
