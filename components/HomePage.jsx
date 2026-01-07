@@ -35,31 +35,31 @@ export default function HomePage() {
 
       {/* CSS MIRATO (mobile ≠ desktop) */}
       <style jsx>{`
-        .jtp-logo-box {
-          width: 100%;
-          max-width: 1150px;
-          height: 320px; /* DESKTOP: identico */
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          margin: 0 auto;
-        }
+  .jtp-logo-box {
+    width: 100%;
+    max-width: 1150px;
+    height: 320px; /* DESKTOP: NON TOCCATO */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+  }
 
-        .jtp-logo-img {
-          width: 100%;
-          height: 100%;
-          object-fit: contain;
-          display: block;
-        }
+  .jtp-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
 
-        /* MOBILE: più HERO ma anche PIÙ SU */
-        @media (max-width: 639px) {
-          .jtp-logo-box {
-            height: min(52vh, 440px); /* HERO grande */
-            margin-top: -70px;        /* lo riporta su sotto al menu */
-          }
-        }
-      `}</style>
+  /* MOBILE: HERO VERO */
+  @media (max-width: 639px) {
+    .jtp-logo-box {
+      height: min(65vh, 560px); /* ⬅️ QUESTO lo rende DAVVERO grande */
+      margin-top: -70px;        /* ⬅️ quello che hai già trovato giusto */
+    }
+  }
+`}</style>
     </section>
   );
 }
