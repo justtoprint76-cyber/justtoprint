@@ -8,7 +8,6 @@ export default function HomePage() {
 
   useEffect(() => {
     const onScroll = () => {
-      // soglia: appena inizi a scorrere un po'
       setCompact(window.scrollY > 80);
     };
     onScroll();
@@ -20,9 +19,7 @@ export default function HomePage() {
     <section
       id="home"
       className="bg-[#F3EDE4] text-[#4A463F] overflow-x-hidden"
-      style={{
-        paddingTop: "92px", // spazio per header fixed (così non copre nulla)
-      }}
+      style={{ paddingTop: "92px" }}
     >
       <Header compact={compact} />
 
@@ -37,7 +34,7 @@ export default function HomePage() {
           />
         </div>
 
-        {/* TESTI (come li hai sistemati tu) */}
+        {/* TESTI */}
         <div className="-mt-16 sm:-mt-8 hero-text">
           <p className="tracking-[0.35em] text-[11px] sm:text-[15px] text-[#6F685E]">
             MODERN PUNJABI STREETWEAR
@@ -51,6 +48,7 @@ export default function HomePage() {
         </div>
       </main>
 
+      {/* STYLES */}
       <style jsx>{`
         .jtp-logo-box {
           width: 100%;
@@ -70,6 +68,27 @@ export default function HomePage() {
           display: block;
         }
 
+        /* HERO ANIMATION */
+        .hero-logo {
+          opacity: 0;
+          transform: translateY(14px);
+          animation: heroFadeUp 0.9s ease-out forwards;
+        }
+
+        .hero-text {
+          opacity: 0;
+          transform: translateY(18px);
+          animation: heroFadeUp 0.9s ease-out forwards;
+          animation-delay: 0.35s;
+        }
+
+        @keyframes heroFadeUp {
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
         /* Mobile: come avevi deciso tu (logo HERO), senza rompere layout */
         @media (max-width: 639px) {
           .jtp-logo-box {
@@ -83,31 +102,17 @@ export default function HomePage() {
             transform-origin: top center;
           }
         }
+
+        /* Rispetto accessibilità: se qualcuno ha "reduce motion" attivo */
+        @media (prefers-reduced-motion: reduce) {
+          .hero-logo,
+          .hero-text {
+            animation: none;
+            opacity: 1;
+            transform: none;
+          }
+        }
       `}</style>
-      <style jsx>{`
-  /* HERO ANIMATION */
-  .hero-logo {
-    opacity: 0;
-    transform: translateY(14px);
-    animation: heroFadeUp 0.9s ease-out forwards;
-  }
-
-  .hero-text {
-    opacity: 0;
-    transform: translateY(18px);
-    animation: heroFadeUp 0.9s ease-out forwards;
-    animation-delay: 0.35s;
-  }
-
-  @keyframes heroFadeUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-`}</style>
-
     </section>
   );
 }
-
