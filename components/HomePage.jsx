@@ -59,7 +59,7 @@ export default function HomePage() {
           }
 
           .jtp-logo-img {
-            transform: scale(1.18);          /* <-- rende HERO davvero */
+            transform: scale(1.14);          /* <-- rende HERO davvero */
             transform-origin: top center;    /* cresce verso il basso */
           }
         }
