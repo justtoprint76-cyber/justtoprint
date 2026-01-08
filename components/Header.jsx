@@ -1,124 +1,67 @@
 "use client";
 
-export default function Header({ compact = false }) {
+export default function Header({ onCartClick, compact = false }) {
   return (
-    <header className={`jtp-header ${compact ? "is-compact" : ""}`}>
-      <div className="jtp-inner">
-        {/* Logo piccolo: appare SOLO quando scrolli */}
-        <div className={`jtp-miniLogo ${compact ? "show" : ""}`}>
-          <img src="/justtoprint-logo.png" alt="JUSTTOPRINT" />
+    <header
+      className="fixed top-0 left-0 right-0 z-50 bg-[#F3EDE4]/90 backdrop-blur"
+      style={{ borderBottom: "1px solid rgba(217,208,195,0.6)" }}
+    >
+      <div
+        className={`max-w-5xl mx-auto px-6 ${
+          compact ? "py-3" : "py-6"
+        }`}
+      >
+        {/* MOBILE: 2 righe (nav sopra, cart sotto). DESKTOP: una riga */}
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-0">
+          {/* NAV */}
+          <nav className="flex flex-wrap justify-center sm:justify-center gap-x-8 gap-y-2 text-[12px] sm:text-[12px] tracking-[0.28em] text-[#6F685E]">
+            <a href="#home" className="hover:text-[#4A463F] transition">
+              HOME
+            </a>
+            <a href="#shop" className="hover:text-[#4A463F] transition">
+              SHOP
+            </a>
+            <span className="opacity-60">—</span>
+            <a href="#about" className="hover:text-[#4A463F] transition">
+              ABOUT
+            </a>
+            <a href="#contact" className="hover:text-[#4A463F] transition">
+              CONTACT
+            </a>
+          </nav>
+
+          {/* CART */}
+          <div className="flex justify-center sm:justify-end">
+            <button
+              type="button"
+              onClick={onCartClick}
+              className="flex items-center gap-3 rounded-full bg-white/55 border border-[#D9D0C3] px-5 py-3 text-[12px] tracking-[0.18em] text-[#4A463F] shadow-sm hover:bg-white/75 transition"
+              aria-label="Open cart"
+            >
+              {/* icon */}
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <circle cx="9" cy="21" r="1" />
+                <circle cx="20" cy="21" r="1" />
+                <path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6" />
+              </svg>
+              <span>CART</span>
+            </button>
+          </div>
         </div>
-
-        {/* Menu */}
-        <nav className="jtp-nav" aria-label="Primary">
-          <a href="#home">HOME</a>
-          <a href="#shop">SHOP</a>
-          <span className="sep">—</span>
-          <a href="#about">ABOUT</a>
-          <a href="#contact">CONTACT</a>
-        </nav>
       </div>
-
-      <style jsx>{`
-        .jtp-header {
-          position: fixed;
-          top: 0;
-          left: 0;
-          right: 0;
-          z-index: 50;
-          background: transparent;
-          transition: background 280ms ease, box-shadow 280ms ease;
-        }
-
-        .jtp-header.is-compact {
-          background: rgba(243, 237, 228, 0.92);
-          backdrop-filter: blur(10px);
-          box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
-        }
-
-        .jtp-inner {
-          max-width: 1150px;
-          margin: 0 auto;
-          padding: 14px 18px;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 10px;
-        }
-
-        .jtp-miniLogo {
-          height: 0;
-          opacity: 0;
-          transform: translateY(-6px) scale(0.98);
-          transition: opacity 260ms ease, transform 260ms ease, height 260ms ease;
-          overflow: hidden;
-        }
-
-        .jtp-miniLogo.show {
-          height: 40px; /* spazio per il logo piccolo */
-          opacity: 1;
-          transform: translateY(0) scale(1);
-        }
-
-        .jtp-miniLogo img {
-          height: 40px;
-          width: auto;
-          display: block;
-          object-fit: contain;
-        }
-
-        .jtp-nav {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 28px;
-          letter-spacing: 0.28em;
-          font-size: 12px;
-          color: #6f685e;
-          text-transform: uppercase;
-        }
-
-        .jtp-nav a {
-          color: inherit;
-          text-decoration: none;
-          transition: opacity 180ms ease;
-        }
-
-        .jtp-nav a:hover {
-          opacity: 0.7;
-        }
-
-        .sep {
-          opacity: 0.55;
-        }
-
-        /* Mobile: menu va su 2 righe in modo pulito */
-        @media (max-width: 639px) {
-          .jtp-inner {
-            padding: 14px 12px;
-            gap: 8px;
-          }
-
-          .jtp-nav {
-            gap: 18px;
-            font-size: 12px;
-            text-align: center;
-            flex-wrap: wrap;
-            justify-content: center;
-          }
-
-          .jtp-miniLogo.show {
-            height: 34px;
-          }
-
-          .jtp-miniLogo img {
-            height: 34px;
-          }
-        }
-      `}</style>
     </header>
   );
 }
+
 
 
 
