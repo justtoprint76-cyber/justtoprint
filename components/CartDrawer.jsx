@@ -49,14 +49,14 @@ export default function CartDrawer() {
 
   return (
     <>
-      {/* Bottone fisso (icona carrello + badge) */}
+      {/* Bottone fisso (visibile, premium) */}
 <button
   type="button"
   onClick={() => setOpen(true)}
-  className="fixed top-5 right-5 z-[60] h-11 w-11 rounded-full border border-[#D9D0C3] bg-[#F3EDE4] text-[#4A463F] flex items-center justify-center hover:bg-[#EFE6DA] transition"
+  className="fixed top-5 right-5 z-[9999] h-12 px-4 rounded-full border border-[#D9D0C3] bg-[#F7F1E8] text-[#4A463F] flex items-center gap-3 shadow-[0_10px_30px_rgba(0,0,0,0.12)] hover:bg-[#EFE6DA] transition"
   aria-label="Open cart"
 >
-  {/* Icona carrello (SVG) */}
+  {/* Icona carrello */}
   <svg
     width="18"
     height="18"
@@ -72,9 +72,14 @@ export default function CartDrawer() {
     <path d="M1 1h4l2.6 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6" />
   </svg>
 
+  {/* Testo (aiuta tantissimo) */}
+  <span className="text-[12px] tracking-[0.18em] uppercase">
+    Cart
+  </span>
+
   {/* Badge */}
   {count > 0 && (
-    <span className="absolute -top-1 -right-1 h-5 min-w-[20px] px-1 rounded-full bg-[#4A463F] text-[#F3EDE4] text-[11px] flex items-center justify-center">
+    <span className="h-6 min-w-[24px] px-2 rounded-full bg-[#4A463F] text-[#F3EDE4] text-[12px] flex items-center justify-center">
       {count}
     </span>
   )}
