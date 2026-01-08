@@ -1,8 +1,8 @@
-import Manifesto from "../components/Manifesto";
 import Head from "next/head";
 import dynamic from "next/dynamic";
+
 import Storefront from "../components/Storefront";
-import Values from "../components/Values";
+import Manifesto from "../components/Manifesto";
 import Footer from "../components/Footer";
 
 // HomePage caricata senza SSR
@@ -13,26 +13,42 @@ const HomePage = dynamic(() => import("../components/HomePage"), {
 export default function Home() {
   return (
     <>
-      {/* HERO */}<Head>
-  <title>JUSTTOPRINT — Modern Punjabi Streetwear</title>
-  <meta
-    name="description"
-    content="JUSTTOPRINT is a cultural streetwear project inspired by Punjabi heritage. Modern silhouettes, premium design, first drop coming soon."
-  />
+      <Head>
+        <title>JUSTTOPRINT — Modern Punjabi Streetwear</title>
+        <meta
+          name="description"
+          content="JUSTTOPRINT is a cultural streetwear project inspired by Punjabi heritage. Modern silhouettes, premium design, first drop coming soon."
+        />
 
-  {/* Mobile */}
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  {/* Open Graph (WhatsApp / Instagram) */}
-  <meta property="og:title" content="JUSTTOPRINT — Modern Punjabi Streetwear" />
-  <meta
-    property="og:description"
-    content="A cultural streetwear project inspired by Punjabi heritage. First drop coming soon."
-  />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://justtoprint.vercel.app" />
-  <meta property="og:image" content="/og-image.jpg" />
-</Head>
+        {/* Open Graph (WhatsApp / Instagram) */}
+        <meta
+          property="og:title"
+          content="JUSTTOPRINT — Modern Punjabi Streetwear"
+        />
+        <meta
+          property="og:description"
+          content="A cultural streetwear project inspired by Punjabi heritage. First drop coming soon."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://justtoprint.vercel.app" />
+        <meta property="og:image" content="/ogimage.png" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="JUSTTOPRINT — Modern Punjabi Streetwear"
+        />
+        <meta
+          name="twitter:description"
+          content="A cultural streetwear project inspired by Punjabi heritage. First drop coming soon."
+        />
+        <meta name="twitter:image" content="/ogimage.png" />
+      </Head>
+
+      {/* HERO */}
       <HomePage />
 
       {/* STACCO EDITORIAL */}
@@ -63,11 +79,9 @@ export default function Home() {
           <Storefront />
         </div>
       </div>
+
       {/* MANIFESTO / ABOUT */}
       <Manifesto />
-
-      {/* ABOUT / VALUES */}
-      <Values />
 
       {/* FOOTER / CONTACT */}
       <Footer />
