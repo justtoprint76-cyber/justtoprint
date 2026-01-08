@@ -50,7 +50,7 @@ export default function CartDrawer() {
   return (
     <>
       {/* Bottone fisso */}
-      <button
+<button ...>Cart ...</button>
         type="button"
         onClick={() => setOpen(true)}
         className="fixed top-5 right-5 z-[60] rounded-full border border-[#D9D0C3] bg-[#F3EDE4] text-[#4A463F] px-4 py-2 text-[12px] tracking-[0.18em] uppercase hover:bg-[#EFE6DA] transition"
