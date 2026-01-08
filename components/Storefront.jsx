@@ -1,48 +1,98 @@
+// components/Storefront.jsx
 "use client";
+
 import { useMemo, useState } from "react";
 
 export default function Storefront() {
-  const products = useMemo(
-    () => [
-      {
-        id: "tee-01",
-        name: "T-SHIRT JUSTTOPRINT",
-        price: 29.9,
-        note: "Heavy cotton • embroidery detail • limited first drop",
-        tag: "FIRST DROP",
+  const [tab, setTab] = useState("men"); // "men" | "women"
+  const [cart, setCart] = useState([]);
+
+  const CONTACT_EMAIL = "justtoprint76@gmail.com";
+
+  // ====== PRODUCTS (edit here anytime) ======
+  const catalog = useMemo(
+    () => ({
+      men: {
+        "T-SHIRTS": [
+          {
+            id: "men-tee-01",
+            name: "JUSTTOPRINT T-Shirt",
+            price: 19.99,
+            status: "active", // active | soon
+          },
+          {
+            id: "men-tee-02",
+            name: "Heritage T-Shirt",
+            price: 19.99,
+            status: "soon",
+          },
+        ],
+        HOODIES: [
+          {
+            id: "men-hoodie-01",
+            name: "Quiet Confidence Hoodie",
+            price: 34.99,
+            status: "soon",
+          },
+        ],
+        CAPS: [
+          {
+            id: "men-cap-01",
+            name: "Minimal Crest Cap",
+            price: 22.99,
+            status: "soon",
+          },
+        ],
       },
-      // Quando vuoi aggiungere altri prodotti:
-      // { id:"hoodie-01", name:"HOODIE JUSTTOPRINT", price:59.9, note:"", tag:"COMING SOON" },
-    ],
+
+      women: {
+        "T-SHIRTS": [
+          {
+            id: "women-tee-01",
+            name: "JUSTTOPRINT T-Shirt",
+            price: 19.99,
+            status: "soon",
+          },
+          {
+            id: "women-tee-02",
+            name: "Signature T-Shirt",
+            price: 19.99,
+            status: "soon",
+          },
+        ],
+        HOODIES: [
+          {
+            id: "women-hoodie-01",
+            name: "Quiet Confidence Hoodie",
+            price: 34.99,
+            status: "soon",
+          },
+        ],
+        CAPS: [
+          {
+            id: "women-cap-01",
+            name: "Minimal Crest Cap",
+            price: 22.99,
+            status: "soon",
+          },
+        ],
+      },
+    }),
     []
   );
 
-  const [cart, setCart] = useState([]);
-
-  function addToCart(p) {
-    setCart((c) => {
-      const found = c.find((x) => x.id === p.id);
-      if (found) return c.map((x) => (x.id === p.id ? { ...x, qty: x.qty + 1 } : x));
-      return [...c, { ...p, qty: 1 }];
-    });
+  function addToCart(item) {
+    setCart((prev) => [...prev, { ...item, qty: 1 }]);
   }
-
-  function removeFromCart(id) {
-    setCart((c) =>
-      c
-        .map((x) => (x.id === id ? { ...x, qty: x.qty - 1 } : x))
-        .filter((x) => x.qty > 0)
-    );
-  }
-
-  const total = cart.reduce((s, x) => s + x.price * x.qty, 0);
 
   async function goToCheckout() {
     try {
       const payload = {
-        items: cart.length
-          ? cart.map(({ name, price, qty }) => ({ name, price, qty }))
-          : [{ name: "T-SHIRT JUSTTOPRINT", price: 29.9, qty: 1 }],
+        items: cart.map(({ name, price, qty }) => ({
+          name,
+          price,
+          qty: qty || 1,
+        })),
       };
 
       const res = await fetch("/api/checkout", {
@@ -53,151 +103,163 @@ export default function Storefront() {
 
       const data = await res.json();
       if (data?.url) window.location.href = data.url;
-      else alert("Errore durante il checkout");
-    } catch (e) {
-      console.error(e);
-      alert("Errore imprevisto");
+      else alert("Checkout error — please try again.");
+    } catch (err) {
+      console.error(err);
+      alert("Unexpected error.");
     }
   }
 
+  const groups = catalog[tab];
+
   return (
     <section className="bg-[#F3EDE4] text-[#4A463F]">
-      <div className="max-w-5xl mx-auto">
-        {/* Titolo sezione */}
-        <div className="text-center pt-8 pb-10">
-          <p className="text-[12px] tracking-[0.22em] text-[#9A9388]">SHOP</p>
+      <div className="max-w-5xl mx-auto pt-10 pb-10">
+        {/* Header */}
+        <div className="text-center">
+          <p className="text-[12px] tracking-[0.22em] text-[#9A9388]">
+            JUSTTOPRINT STORE
+          </p>
           <h3
-            className="mt-5 text-[22px] sm:text-[26px] tracking-[0.05em]"
+            className="mt-4 text-[22px] sm:text-[26px] tracking-[0.08em]"
             style={{ fontFamily: "serif", color: "#6B6256" }}
           >
-            JUSTTOPRINT Store
+            Pieces, not noise.
           </h3>
-          <p className="mt-4 text-[14px] sm:text-[15px] text-[#7A7267] max-w-[60ch] mx-auto">
-            Minimal selection. Premium feel. More pieces arriving soon.
-          </p>
+
+          {/* Tabs */}
+          <div className="mt-7 inline-flex rounded-full border border-[#D9D0C3] overflow-hidden">
+            <button
+              onClick={() => setTab("men")}
+              className={`px-5 py-2 text-[12px] tracking-[0.25em] ${
+                tab === "men"
+                  ? "bg-[#EDE5DA] text-[#4A463F]"
+                  : "bg-transparent text-[#7A7267]"
+              }`}
+            >
+              MEN
+            </button>
+            <button
+              onClick={() => setTab("women")}
+              className={`px-5 py-2 text-[12px] tracking-[0.25em] ${
+                tab === "women"
+                  ? "bg-[#EDE5DA] text-[#4A463F]"
+                  : "bg-transparent text-[#7A7267]"
+              }`}
+            >
+              WOMEN
+            </button>
+          </div>
         </div>
 
-        {/* Griglia prodotti */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pb-10">
-          {products.map((p) => (
-            <article
-              key={p.id}
-              className="rounded-[22px] border border-[#D9D0C3] bg-[#F7F1E9] p-6 sm:p-7 shadow-[0_10px_30px_rgba(0,0,0,0.04)]"
-            >
-              <div className="flex items-start justify-between gap-3">
-                <div>
-                  <p className="text-[12px] tracking-[0.22em] text-[#9A9388]">
-                    {p.tag}
-                  </p>
-                  <h4
-                    className="mt-3 text-[18px] sm:text-[20px] tracking-[0.06em]"
-                    style={{ fontFamily: "serif", color: "#5E564B" }}
+        {/* Categories */}
+        <div className="mt-10 space-y-12">
+          {Object.entries(groups).map(([category, items]) => (
+            <div key={category}>
+              <div className="flex items-center justify-between">
+                <p className="text-[12px] tracking-[0.22em] text-[#9A9388]">
+                  {category}
+                </p>
+                <div className="h-px flex-1 bg-[#D9D0C3] ml-4" />
+              </div>
+
+              <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-5">
+                {items.map((p) => (
+                  <div
+                    key={p.id}
+                    className="rounded-2xl border border-[#D9D0C3] bg-[#F7F1E8] p-6"
                   >
-                    {p.name}
-                  </h4>
-                </div>
+                    <div className="flex items-start justify-between gap-4">
+                      <div>
+                        <p className="text-[11px] tracking-[0.22em] text-[#9A9388]">
+                          {tab === "men" ? "MEN" : "WOMEN"} •{" "}
+                          {p.status === "active" ? "AVAILABLE" : "COMING SOON"}
+                        </p>
+                        <h4
+                          className="mt-2 text-[18px] tracking-[0.06em]"
+                          style={{ fontFamily: "serif", color: "#6B6256" }}
+                        >
+                          {p.name}
+                        </h4>
+                      </div>
 
-                <div className="text-right">
-                  <p className="text-[14px] text-[#7A7267]">Price</p>
-                  <p className="mt-1 text-[18px] sm:text-[20px]" style={{ color: "#5E564B" }}>
-                    €{p.price.toFixed(2)}
-                  </p>
-                </div>
+                      <p className="text-[14px] text-[#6F685E]">
+                        €{p.price.toFixed(2)}
+                      </p>
+                    </div>
+
+                    <div className="mt-5 flex items-center gap-3">
+                      {p.status === "active" ? (
+                        <button
+                          onClick={() =>
+                            addToCart({ name: p.name, price: p.price })
+                          }
+                          className="px-5 py-2 rounded-full text-[12px] tracking-[0.14em] bg-[#C8AE6A] text-[#1A1408] hover:opacity-90"
+                        >
+                          ADD TO CART
+                        </button>
+                      ) : (
+                        <a
+                          href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
+                            "JUSTTOPRINT — Notify me"
+                          )}&body=${encodeURIComponent(
+                            `Hi JUSTTOPRINT,\n\nPlease notify me when this item is available:\n\n- ${p.name} (${tab.toUpperCase()})\nPrice: €${p.price.toFixed(
+                              2
+                            )}\n\nThank you.`
+                          )}`}
+                          className="px-5 py-2 rounded-full text-[12px] tracking-[0.14em] border border-[#D9D0C3] bg-transparent text-[#6B6256] hover:bg-[#EDE5DA]"
+                        >
+                          NOTIFY ME
+                        </a>
+                      )}
+
+                      <span className="text-[12px] text-[#9A9388]">
+                        {p.status === "active"
+                          ? "Ships soon"
+                          : "Drop date coming soon"}
+                      </span>
+                    </div>
+                  </div>
+                ))}
               </div>
-
-              <p className="mt-4 text-[13px] sm:text-[14px] text-[#7A7267] leading-relaxed">
-                {p.note}
-              </p>
-
-              <div className="mt-6 flex items-center justify-between gap-4">
-                <button
-                  onClick={() => addToCart(p)}
-                  className="rounded-full px-6 py-3 text-[13px] sm:text-[14px] tracking-[0.12em] uppercase"
-                  style={{
-                    background: "linear-gradient(180deg,#d4af37 0%,#b7922b 100%)",
-                    color: "#2A241E",
-                  }}
-                >
-                  Add to cart
-                </button>
-
-                <button
-                  onClick={() => addToCart(p)}
-                  className="text-[12px] tracking-[0.18em] uppercase text-[#7A7267] hover:text-[#5E564B] transition"
-                >
-                  Quick add
-                </button>
-              </div>
-            </article>
+            </div>
           ))}
         </div>
 
-        {/* Carrello (se c’è qualcosa) */}
+        {/* Cart */}
         {cart.length > 0 && (
-          <aside className="rounded-[22px] border border-[#D9D0C3] bg-[#F7F1E9] p-6 sm:p-7 mb-16 shadow-[0_10px_30px_rgba(0,0,0,0.04)]">
-            <div className="flex items-start justify-between gap-4">
-              <div>
-                <p className="text-[12px] tracking-[0.22em] text-[#9A9388]">CART</p>
-                <h4
-                  className="mt-3 text-[18px] sm:text-[20px] tracking-[0.06em]"
-                  style={{ fontFamily: "serif", color: "#5E564B" }}
-                >
-                  Your selection
-                </h4>
-              </div>
-              <p className="text-[16px] sm:text-[18px]" style={{ color: "#5E564B" }}>
-                €{total.toFixed(2)}
+          <div className="mt-14 rounded-2xl border border-[#D9D0C3] bg-[#F7F1E8] p-6">
+            <div className="flex items-center justify-between">
+              <p className="text-[12px] tracking-[0.22em] text-[#9A9388]">
+                CART
+              </p>
+              <p className="text-[13px] text-[#6F685E]">
+                Total: €
+                {cart
+                  .reduce((sum, it) => sum + it.price * (it.qty || 1), 0)
+                  .toFixed(2)}
               </p>
             </div>
 
-            <div className="mt-5 space-y-3">
-              {cart.map((x) => (
-                <div
-                  key={x.id}
-                  className="flex items-center justify-between gap-4 text-[#6B6256]"
+            <ul className="mt-4 space-y-2">
+              {cart.map((it, i) => (
+                <li
+                  key={i}
+                  className="flex justify-between text-[13px] text-[#6B6256]"
                 >
-                  <div className="min-w-0">
-                    <p className="text-[13px] sm:text-[14px] tracking-[0.06em] truncate">
-                      {x.name}
-                    </p>
-                    <p className="text-[12px] text-[#8B847A]">
-                      €{x.price.toFixed(2)} × {x.qty}
-                    </p>
-                  </div>
-
-                  <div className="flex items-center gap-2">
-                    <button
-                      onClick={() => removeFromCart(x.id)}
-                      className="w-9 h-9 rounded-full border border-[#D9D0C3] bg-transparent hover:bg-[#EFE7DC] transition"
-                    >
-                      −
-                    </button>
-                    <button
-                      onClick={() => addToCart(x)}
-                      className="w-9 h-9 rounded-full border border-[#D9D0C3] bg-transparent hover:bg-[#EFE7DC] transition"
-                    >
-                      +
-                    </button>
-                  </div>
-                </div>
+                  <span>{it.name}</span>
+                  <span>€{it.price.toFixed(2)}</span>
+                </li>
               ))}
-            </div>
+            </ul>
 
             <button
               onClick={goToCheckout}
-              className="mt-7 w-full rounded-full py-3 text-[13px] sm:text-[14px] tracking-[0.12em] uppercase"
-              style={{
-                background: "linear-gradient(180deg,#d4af37 0%,#b7922b 100%)",
-                color: "#2A241E",
-              }}
+              className="mt-6 w-full py-3 rounded-full text-[12px] tracking-[0.18em] bg-[#1A1408] text-[#F3EDE4] hover:opacity-90"
             >
-              Checkout
+              CHECKOUT
             </button>
-
-            <p className="mt-3 text-center text-[11px] text-[#9A9388]">
-              Demo checkout • Stripe link will open in a new page.
-            </p>
-          </aside>
+          </div>
         )}
       </div>
     </section>
