@@ -12,7 +12,26 @@ const HomePage = dynamic(() => import("../components/HomePage"), {
 export default function Home() {
   return (
     <>
-      {/* HERO */}
+      {/* HERO */}<Head>
+  <title>JUSTTOPRINT — Modern Punjabi Streetwear</title>
+  <meta
+    name="description"
+    content="JUSTTOPRINT is a cultural streetwear project inspired by Punjabi heritage. Modern silhouettes, premium design, first drop coming soon."
+  />
+
+  {/* Mobile */}
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  {/* Open Graph (WhatsApp / Instagram) */}
+  <meta property="og:title" content="JUSTTOPRINT — Modern Punjabi Streetwear" />
+  <meta
+    property="og:description"
+    content="A cultural streetwear project inspired by Punjabi heritage. First drop coming soon."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://justtoprint.vercel.app" />
+  <meta property="og:image" content="/og-image.jpg" />
+</Head>
       <HomePage />
 
       {/* STACCO EDITORIAL */}
