@@ -6,10 +6,12 @@ export default function Manifesto() {
       <div className="max-w-5xl mx-auto pt-24 pb-20">
         <p className="text-[12px] tracking-[0.22em] text-[#9A9388]">ABOUT</p>
 
-        <h2 className="mt-8 text-[38px] sm:text-[64px] leading-[1.05] tracking-[0.02em] text-[#6B6256] font-serif">
-          JUSTTOPRINT is modern Punjabi streetwear — designed with respect,
-          identity, and intention.
-        </h2>
+        <h2 className="text-[26px] sm:text-[32px] tracking-[0.04em] leading-snug text-[#6B6256]">
+  JUSTTOPRINT
+  <span className="block mt-2 text-[16px] sm:text-[18px] text-[#7A7267]">
+    Modern Punjabi streetwear, designed with respect and intention.
+  </span>
+</h2>
 
         <div className="mt-12 grid gap-10 sm:grid-cols-2">
           <div className="text-[16px] leading-[1.9] text-[#6F685E]">
