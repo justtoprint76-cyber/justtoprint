@@ -1,3 +1,4 @@
+import Head from "next/head";
 import dynamic from "next/dynamic";
 import Storefront from "../components/Storefront";
 import Values from "../components/Values";
