@@ -1,3 +1,4 @@
+import Manifesto from "../components/Manifesto";
 import Head from "next/head";
 import dynamic from "next/dynamic";
 import Storefront from "../components/Storefront";
@@ -62,6 +63,8 @@ export default function Home() {
           <Storefront />
         </div>
       </div>
+      {/* MANIFESTO / ABOUT */}
+      <Manifesto />
 
       {/* ABOUT / VALUES */}
       <Values />
