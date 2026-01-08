@@ -1,3 +1,4 @@
+import Reveal from "../components/Reveal";
 import CookieBanner from "../components/CookieBanner";
 import Head from "next/head";
 import dynamic from "next/dynamic";
