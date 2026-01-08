@@ -4,9 +4,7 @@ import Storefront from "../components/Storefront";
 import Manifesto from "../components/Manifesto";
 import Values from "../components/Values";
 import Footer from "../components/Footer";
-import Reveal from "../components/Reveal";
 
-// HomePage caricata senza SSR
 const HomePage = dynamic(() => import("../components/HomePage"), {
   ssr: false,
 });
@@ -32,56 +30,38 @@ export default function Home() {
         <meta property="og:image" content="/ogimage.png" />
       </Head>
 
-      {/* HERO (NON serve Reveal qui, hai già le animazioni) */}
       <HomePage />
 
-      {/* STACCO EDITORIAL */}
-      <Reveal>
-        <section className="bg-[#F3EDE4] text-[#4A463F] px-6">
-          <div className="max-w-5xl mx-auto pt-24 pb-14 text-center">
-            <p className="text-[12px] tracking-[0.22em] text-[#9A9388]">
-              THE COLLECTION
-            </p>
+      <section className="bg-[#F3EDE4] text-[#4A463F] px-6">
+        <div className="max-w-5xl mx-auto pt-24 pb-14 text-center">
+          <p className="text-[12px] tracking-[0.22em] text-[#9A9388]">
+            THE COLLECTION
+          </p>
 
-            <h2
-              className="mt-6 text-[28px] sm:text-[34px] leading-[1.2] tracking-[0.04em]"
-              style={{ fontFamily: "serif", color: "#6B6256" }}
-            >
-              Explore the pieces.
-            </h2>
+          <h2
+            className="mt-6 text-[28px] sm:text-[34px] leading-[1.2] tracking-[0.04em]"
+            style={{ fontFamily: "serif", color: "#6B6256" }}
+          >
+            Explore the pieces.
+          </h2>
 
-            <p className="mt-6 text-[15px] leading-relaxed text-[#7A7267] max-w-[62ch] mx-auto">
-              Designed with intention — modern silhouettes, cultural roots.
-            </p>
+          <p className="mt-6 text-[15px] leading-relaxed text-[#7A7267] max-w-[62ch] mx-auto">
+            Designed with intention — modern silhouettes, cultural roots.
+          </p>
 
-            <div className="mt-12 h-px w-full bg-[#D9D0C3]" />
-          </div>
-        </section>
-      </Reveal>
-
-      {/* SHOP */}
-      <Reveal>
-        <div id="shop" className="bg-[#F3EDE4] px-6 pt-8 pb-24">
-          <div className="max-w-5xl mx-auto">
-            <Storefront />
-          </div>
+          <div className="mt-12 h-px w-full bg-[#D9D0C3]" />
         </div>
-      </Reveal>
+      </section>
 
-      {/* MANIFESTO / ABOUT */}
-      <Reveal>
-        <Manifesto />
-      </Reveal>
+      <div id="shop" className="bg-[#F3EDE4] px-6 pt-8 pb-24">
+        <div className="max-w-5xl mx-auto">
+          <Storefront />
+        </div>
+      </div>
 
-      {/* VALUES */}
-      <Reveal>
-        <Values />
-      </Reveal>
-
-      {/* FOOTER / CONTACT */}
-      <Reveal>
-        <Footer />
-      </Reveal>
+      <Manifesto />
+      <Values />
+      <Footer />
     </>
   );
 }
