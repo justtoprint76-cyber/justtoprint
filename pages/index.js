@@ -1,5 +1,7 @@
 import dynamic from "next/dynamic";
 import Storefront from "../components/Storefront";
+import Values from "../components/Values";
+import Footer from "../components/Footer";
 
 // HomePage caricata senza SSR
 const HomePage = dynamic(() => import("../components/HomePage"), {
@@ -40,6 +42,12 @@ export default function Home() {
           <Storefront />
         </div>
       </div>
+
+      {/* ABOUT / VALUES */}
+      <Values />
+
+      {/* FOOTER / CONTACT */}
+      <Footer />
     </>
   );
 }
