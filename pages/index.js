@@ -1,3 +1,4 @@
+import CookieBanner from "../components/CookieBanner";
 import Head from "next/head";
 import dynamic from "next/dynamic";
 
@@ -85,6 +86,7 @@ export default function Home() {
 
       {/* FOOTER / CONTACT */}
       <Footer />
+        <CookieBanner />
     </>
   );
 }
