@@ -99,3 +99,10 @@ footer {
 html {
   scroll-behavior: smooth;
 }
+button:focus,
+button:focus-visible,
+a:focus,
+a:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
