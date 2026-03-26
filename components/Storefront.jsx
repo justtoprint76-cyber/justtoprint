@@ -1,157 +1,67 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { useCart } from "./CartContext";
 
 export default function Storefront() {
   const { addItem } = useCart();
   const [tab, setTab] = useState("men");
-  const CONTACT_EMAIL = "justtoprint76@gmail.com";
 
-  const catalog = useMemo(
-    () => ({
-      men: [
-        {
-          category: "T-SHIRTS",
-          items: [
-            {
-              id: "men-tee-01",
-              name: "JUSTTOPRINT T-Shirt",
-              price: 19.99,
-              status: "active",
-              note: "Clean fit • cultural detail • first drop",
-              tag: "AVAILABLE",
-            },
-            {
-              id: "men-tee-02",
-              name: "Heritage Script T-Shirt",
-              price: 19.99,
-              status: "soon",
-              note: "Drop in progress • limited run",
-              tag: "COMING SOON",
-            },
-          ],
-        },
-        {
-          category: "HOODIES",
-          items: [
-            {
-              id: "men-hoodie-01",
-              name: "Quiet Confidence Hoodie",
-              price: 34.99,
-              status: "soon",
-              note: "Heavy comfort • modern silhouette",
-              tag: "COMING SOON",
-            },
-          ],
-        },
-        {
-          category: "CAPS",
-          items: [
-            {
-              id: "men-cap-01",
-              name: "Minimal Crest Cap",
-              price: 22.99,
-              status: "active",
-              note: "Everyday cap • clean branding",
-              tag: "AVAILABLE",
-            },
-          ],
-        },
-      ],
+  const products = {
+    men: [
+      {
+        id: "1",
+        name: "JUSTTOPRINT T-Shirt",
+        price: 19.99,
+      },
+      {
+        id: "2",
+        name: "Minimal Crest Cap",
+        price: 22.99,
+      },
+    ],
+    women: [
+      {
+        id: "3",
+        name: "JUSTTOPRINT T-Shirt",
+        price: 19.99,
+      },
+      {
+        id: "4",
+        name: "Minimal Crest Cap",
+        price: 22.99,
+      },
+    ],
+  };
 
-      women: [
-        {
-          category: "T-SHIRTS",
-          items: [
-            {
-              id: "women-tee-01",
-              name: "JUSTTOPRINT T-Shirt",
-              price: 19.99,
-              status: "active",
-              note: "Clean fit • cultural detail • first drop",
-              tag: "AVAILABLE",
-            },
-            {
-              id: "women-tee-02",
-              name: "Signature Script T-Shirt",
-              price: 19.99,
-              status: "soon",
-              note: "Drop in progress • limited run",
-              tag: "COMING SOON",
-            },
-          ],
-        },
-        {
-          category: "HOODIES",
-          items: [
-            {
-              id: "women-hoodie-01",
-              name: "Quiet Confidence Hoodie",
-              price: 34.99,
-              status: "soon",
-              note: "Heavy comfort • modern silhouette",
-              tag: "COMING SOON",
-            },
-          ],
-        },
-        {
-          category: "CAPS",
-          items: [
-            {
-              id: "women-cap-01",
-              name: "Minimal Crest Cap",
-              price: 22.99,
-              status: "active",
-              note: "Everyday cap • clean branding",
-              tag: "AVAILABLE",
-            },
-          ],
-        },
-      ],
-    }),
-    []
-  );
-
-  const sections = catalog[tab];
+  const visible = products[tab];
 
   return (
-    <section id="shop" className="bg-[#F3EDE4] text-[#4A463F]">
-      <div className="max-w-5xl mx-auto px-5 pt-10 pb-20">
-        
-        {/* HEADER SHOP */}
+    <section id="shop" className="bg-[#F3EDE4] text-black">
+      <div className="max-w-3xl mx-auto px-6 py-20">
+
+        {/* HEADER */}
         <div className="text-center">
-          <p className="text-[11px] tracking-[0.25em] text-[#9A9388]">
-            SHOP
+          <p className="text-[11px] tracking-[0.3em] text-black/50">
+            JUSTTOPRINT
           </p>
 
-          <h3
-            className="mt-6 text-[22px] sm:text-[26px]"
-            style={{ fontFamily: "serif", color: "#4A463F" }}
-          >
-            Collection
-          </h3>
+          <h2 className="mt-6 text-2xl font-serif">
+            First Drop
+          </h2>
 
           {/* TABS */}
-          <div className="mt-8 flex justify-center gap-8">
+          <div className="mt-10 flex justify-center gap-10 text-[12px] tracking-[0.3em]">
             <button
               onClick={() => setTab("men")}
-              className={`text-[12px] tracking-[0.25em] ${
-                tab === "men"
-                  ? "text-black"
-                  : "text-[#9A9388]"
-              }`}
+              className={tab === "men" ? "text-black" : "text-black/40"}
             >
               MEN
             </button>
 
             <button
               onClick={() => setTab("women")}
-              className={`text-[12px] tracking-[0.25em] ${
-                tab === "women"
-                  ? "text-black"
-                  : "text-[#9A9388]"
-              }`}
+              className={tab === "women" ? "text-black" : "text-black/40"}
             >
               WOMEN
             </button>
@@ -159,75 +69,31 @@ export default function Storefront() {
         </div>
 
         {/* PRODUCTS */}
-        <div className="mt-14 space-y-16">
-          {sections.map((block) => (
-            <div key={block.category}>
-              
-              {/* CATEGORY */}
-              <div className="flex items-center gap-4">
-                <p className="text-[11px] tracking-[0.25em] text-[#9A9388]">
-                  {block.category}
-                </p>
-                <div className="h-px flex-1 bg-[#D9D0C3]" />
-              </div>
+        <div className="mt-20 space-y-24">
+          {visible.map((p) => (
+            <div key={p.id} className="text-center">
 
-              {/* GRID */}
-              <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
-                {block.items.map((p) => (
-                  <div key={p.id} className="group">
-                    
-                    <div className="border border-[#D9D0C3] bg-[#F7F1E8] p-6 transition group-hover:shadow-[0_10px_30px_rgba(0,0,0,0.06)]">
-                      
-                      <div className="flex justify-between">
-                        <p className="text-[11px] tracking-[0.2em] text-[#9A9388]">
-                          {p.tag}
-                        </p>
+              {/* IMAGE PLACEHOLDER */}
+              <div className="w-full h-[320px] bg-[#EDE5DA] mb-6" />
 
-                        <p className="text-[13px] text-[#6F685E]">
-                          €{p.price.toFixed(2)}
-                        </p>
-                      </div>
+              {/* NAME */}
+              <h3 className="text-lg font-serif">
+                {p.name}
+              </h3>
 
-                      <h4
-                        className="mt-3 text-[17px]"
-                        style={{ fontFamily: "serif", color: "#4A463F" }}
-                      >
-                        {p.name}
-                      </h4>
+              {/* PRICE */}
+              <p className="mt-2 text-sm text-black/60">
+                €{p.price.toFixed(2)}
+              </p>
 
-                      <p className="mt-2 text-[13px] text-[#7A7267]">
-                        {p.note}
-                      </p>
+              {/* BUTTON */}
+              <button
+                onClick={() => addItem(p)}
+                className="mt-6 text-[11px] tracking-[0.3em] uppercase border-b border-black pb-1 hover:opacity-60 transition"
+              >
+                Add to cart
+              </button>
 
-                      <div className="mt-6">
-                        {p.status === "active" ? (
-                          <button
-                            onClick={() =>
-                              addItem({
-                                id: p.id,
-                                name: p.name,
-                                price: p.price,
-                              })
-                            }
-                            className="w-full py-2 text-[11px] tracking-[0.2em] uppercase border border-black text-black hover:bg-black hover:text-white transition"
-                          >
-                            Add to cart
-                          </button>
-                        ) : (
-                          <a
-                            href={`mailto:${CONTACT_EMAIL}`}
-                            className="block text-center w-full py-2 text-[11px] tracking-[0.2em] uppercase border border-[#D9D0C3] text-[#9A9388]"
-                          >
-                            Notify me
-                          </a>
-                        )}
-                      </div>
-
-                    </div>
-
-                  </div>
-                ))}
-              </div>
             </div>
           ))}
         </div>
