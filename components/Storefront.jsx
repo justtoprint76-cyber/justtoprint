@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { useCart } from "./CartContext";
 
@@ -10,66 +11,30 @@ export default function Storefront() {
   const products = {
     men: [
       {
-        id: "men-tee-1",
+        id: "men-1",
         name: "JUSTTOPRINT T-Shirt",
         price: 19.99,
-        subtitle: "Essential logo piece",
+        subtitle: "First drop essential",
       },
       {
-        id: "men-tee-2",
-        name: "Heritage Script T-Shirt",
-        price: 21.99,
-        subtitle: "Soft everyday jersey",
-      },
-      {
-        id: "men-tee-3",
-        name: "Punjab Studio Tee",
+        id: "men-2",
+        name: "Minimal Crest Cap",
         price: 22.99,
-        subtitle: "Minimal editorial fit",
-      },
-      {
-        id: "men-hoodie-1",
-        name: "Quiet Confidence Hoodie",
-        price: 34.99,
-        subtitle: "Heavyweight brushed cotton",
-      },
-      {
-        id: "men-hoodie-2",
-        name: "Core Street Hoodie",
-        price: 36.99,
-        subtitle: "Relaxed premium silhouette",
+        subtitle: "Everyday uniform",
       },
     ],
     women: [
       {
-        id: "women-tee-1",
+        id: "women-1",
         name: "JUSTTOPRINT T-Shirt",
         price: 19.99,
-        subtitle: "Essential logo piece",
+        subtitle: "First drop essential",
       },
       {
-        id: "women-tee-2",
-        name: "Signature Script T-Shirt",
-        price: 21.99,
-        subtitle: "Soft everyday jersey",
-      },
-      {
-        id: "women-tee-3",
-        name: "Quiet Form Tee",
+        id: "women-2",
+        name: "Minimal Crest Cap",
         price: 22.99,
-        subtitle: "Minimal editorial fit",
-      },
-      {
-        id: "women-hoodie-1",
-        name: "Quiet Confidence Hoodie",
-        price: 34.99,
-        subtitle: "Heavyweight brushed cotton",
-      },
-      {
-        id: "women-hoodie-2",
-        name: "Core Street Hoodie",
-        price: 36.99,
-        subtitle: "Relaxed premium silhouette",
+        subtitle: "Everyday uniform",
       },
     ],
   };
@@ -121,6 +86,36 @@ export default function Storefront() {
               Women
             </button>
           </div>
+        </div>
+
+        <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <Link href="/men" className="group block">
+            <div className="relative h-[300px] md:h-[380px] overflow-hidden bg-[#E8DED1]">
+              <div className="absolute inset-0 bg-black/5 group-hover:bg-black/10 transition" />
+
+              <div className="absolute inset-0 flex items-center justify-center">
+                <span className="text-[16px] md:text-[18px] tracking-[0.35em] uppercase text-black group-hover:opacity-70 transition">
+                  Men
+                </span>
+              </div>
+
+              <div className="absolute bottom-8 left-1/2 -translate-x-1/2 w-12 h-[1px] bg-black/30 group-hover:w-20 transition-all duration-300" />
+            </div>
+          </Link>
+
+          <Link href="/women" className="group block">
+            <div className="relative h-[300px] md:h-[380px] overflow-hidden bg-[#E8DED1]">
+              <div className="absolute inset-0 bg-black/5 group-hover:bg-black/10 transition" />
+
+              <div className="absolute inset-0 flex items-center justify-center">
+                <span className="text-[16px] md:text-[18px] tracking-[0.35em] uppercase text-black group-hover:opacity-70 transition">
+                  Women
+                </span>
+              </div>
+
+              <div className="absolute bottom-8 left-1/2 -translate-x-1/2 w-12 h-[1px] bg-black/30 group-hover:w-20 transition-all duration-300" />
+            </div>
+          </Link>
         </div>
 
         <div className="mt-20 sm:mt-24 lg:mt-28 space-y-20 sm:space-y-24 lg:space-y-32">
