@@ -15,6 +15,37 @@ function eur(n) {
 export default function CartPage() {
   const { items, removeItem, setQty, total, clear } = useCart();
 
+  async function goToCheckout() {
+    try {
+      const payload = {
+        items: items.map(({ name, price, qty, image }) => ({
+          name,
+          price,
+          qty: qty || 1,
+          image: image || null,
+        })),
+      };
+
+      const res = await fetch("/api/checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await res.json();
+
+      if (data?.url) {
+        window.location.href = data.url;
+      } else {
+        alert("Errore durante il checkout");
+        console.error(data);
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Errore imprevisto");
+    }
+  }
+
   return (
     <main className="min-h-screen bg-[#f5f1ea] text-[#4A463F] px-4 md:px-6 py-10 md:py-16">
       <div className="max-w-5xl mx-auto">
@@ -69,7 +100,7 @@ export default function CartPage() {
                       <span className="text-xs text-[#9A9388]">Qty</span>
                       <input
                         value={it.qty || 1}
-                        onChange={(e) => setQty(it.id, e.target.value)}
+                        onChange={(e) => setQty(it.id, Number(e.target.value))}
                         type="number"
                         min="1"
                         className="w-16 rounded-lg border border-[#D9D0C3] bg-white/70 px-2 py-1 text-sm outline-none"
@@ -92,7 +123,19 @@ export default function CartPage() {
                 <p className="text-sm text-[#4A463F]">{eur(total)}</p>
               </div>
 
-              <button className="w-full rounded-full py-3 text-[12px] tracking-[0.18em] uppercase bg-[#4A463F] text-[#F3EDE4] hover:bg-[#3A362F] transition">
+              <p className="text-xs text-[#9A9388] mb-5">
+                Shipping and taxes calculated at checkout.
+              </p>
+
+              <button
+                disabled={items.length === 0}
+                onClick={goToCheckout}
+                className={`w-full rounded-full py-3 text-[12px] tracking-[0.18em] uppercase transition ${
+                  items.length === 0
+                    ? "bg-[#DDD6CC] text-[#9A9388] cursor-not-allowed"
+                    : "bg-[#4A463F] text-[#F3EDE4] hover:bg-[#3A362F]"
+                }`}
+              >
                 Checkout
               </button>
 
