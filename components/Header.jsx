@@ -65,7 +65,26 @@ export default function Header() {
             : "-translate-y-full opacity-0"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 py-3 flex items-center justify-center relative">
+  
+  {/* Logo centrato */}
+  <Link href="/" className="block">
+    <img
+      src="/justtoprint-logo.png"
+      alt="JUSTTOPRINT"
+      className="h-8 md:h-10 w-auto object-contain"
+    />
+  </Link>
+
+  {/* Cart a destra */}
+  <Link
+    href="/cart"
+    className="absolute right-4 md:right-6 text-[11px] md:text-xs uppercase tracking-[0.18em] text-black"
+  >
+    Cart
+  </Link>
+
+</div>
           <Link
             href="/"
             className="font-serif text-lg md:text-xl tracking-[0.08em] text-black"
