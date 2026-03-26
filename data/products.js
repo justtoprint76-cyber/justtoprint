@@ -5,7 +5,6 @@ export const menProducts = [
     price: 19.99,
     subtitle: "Essential logo piece",
     category: "T-Shirt",
-    image: "/products/placeholder-1.jpg",
   },
   {
     id: "men-tee-02",
@@ -13,7 +12,6 @@ export const menProducts = [
     price: 21.99,
     subtitle: "Soft everyday jersey",
     category: "T-Shirt",
-    image: "/products/placeholder-2.jpg",
   },
   {
     id: "men-tee-03",
@@ -21,23 +19,6 @@ export const menProducts = [
     price: 22.99,
     subtitle: "Minimal editorial fit",
     category: "T-Shirt",
-    image: "/products/placeholder-3.jpg",
-  },
-  {
-    id: "men-tee-04",
-    name: "Quiet Form Tee",
-    price: 22.99,
-    subtitle: "Clean oversized cut",
-    category: "T-Shirt",
-    image: "/products/placeholder-4.jpg",
-  },
-  {
-    id: "men-tee-05",
-    name: "Archive Logo Tee",
-    price: 23.99,
-    subtitle: "Subtle front mark",
-    category: "T-Shirt",
-    image: "/products/placeholder-5.jpg",
   },
   {
     id: "men-hoodie-01",
@@ -45,7 +26,6 @@ export const menProducts = [
     price: 34.99,
     subtitle: "Heavyweight brushed cotton",
     category: "Hoodie",
-    image: "/products/placeholder-6.jpg",
   },
   {
     id: "men-hoodie-02",
@@ -53,31 +33,6 @@ export const menProducts = [
     price: 36.99,
     subtitle: "Relaxed premium silhouette",
     category: "Hoodie",
-    image: "/products/placeholder-1.jpg",
-  },
-  {
-    id: "men-hoodie-03",
-    name: "Heritage Pullover",
-    price: 38.99,
-    subtitle: "Soft interior structure",
-    category: "Hoodie",
-    image: "/products/placeholder-2.jpg",
-  },
-  {
-    id: "men-hoodie-04",
-    name: "Studio Heavy Hoodie",
-    price: 39.99,
-    subtitle: "Warm layered essential",
-    category: "Hoodie",
-    image: "/products/placeholder-3.jpg",
-  },
-  {
-    id: "men-hoodie-05",
-    name: "Uniform Hoodie",
-    price: 37.99,
-    subtitle: "Minimal daily staple",
-    category: "Hoodie",
-    image: "/products/placeholder-4.jpg",
   },
 ];
 
@@ -88,7 +43,6 @@ export const womenProducts = [
     price: 19.99,
     subtitle: "Essential logo piece",
     category: "T-Shirt",
-    image: "/products/placeholder-1.jpg",
   },
   {
     id: "women-tee-02",
@@ -96,7 +50,6 @@ export const womenProducts = [
     price: 21.99,
     subtitle: "Soft everyday jersey",
     category: "T-Shirt",
-    image: "/products/placeholder-2.jpg",
   },
   {
     id: "women-tee-03",
@@ -104,23 +57,6 @@ export const womenProducts = [
     price: 22.99,
     subtitle: "Minimal editorial fit",
     category: "T-Shirt",
-    image: "/products/placeholder-3.jpg",
-  },
-  {
-    id: "women-tee-04",
-    name: "Studio Line T-Shirt",
-    price: 22.99,
-    subtitle: "Clean soft silhouette",
-    category: "T-Shirt",
-    image: "/products/placeholder-4.jpg",
-  },
-  {
-    id: "women-tee-05",
-    name: "Archive Script Tee",
-    price: 23.99,
-    subtitle: "Subtle front mark",
-    category: "T-Shirt",
-    image: "/products/placeholder-5.jpg",
   },
   {
     id: "women-hoodie-01",
@@ -128,7 +64,6 @@ export const womenProducts = [
     price: 34.99,
     subtitle: "Heavyweight brushed cotton",
     category: "Hoodie",
-    image: "/products/placeholder-6.jpg",
   },
   {
     id: "women-hoodie-02",
@@ -136,30 +71,5 @@ export const womenProducts = [
     price: 36.99,
     subtitle: "Relaxed premium silhouette",
     category: "Hoodie",
-    image: "/products/placeholder-1.jpg",
-  },
-  {
-    id: "women-hoodie-03",
-    name: "Soft Form Hoodie",
-    price: 38.99,
-    subtitle: "Easy elevated shape",
-    category: "Hoodie",
-    image: "/products/placeholder-2.jpg",
-  },
-  {
-    id: "women-hoodie-04",
-    name: "Studio Heavy Hoodie",
-    price: 39.99,
-    subtitle: "Warm layered essential",
-    category: "Hoodie",
-    image: "/products/placeholder-3.jpg",
-  },
-  {
-    id: "women-hoodie-05",
-    name: "Uniform Hoodie",
-    price: 37.99,
-    subtitle: "Minimal daily staple",
-    category: "Hoodie",
-    image: "/products/placeholder-4.jpg",
   },
 ];
