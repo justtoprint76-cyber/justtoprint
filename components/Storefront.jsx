@@ -10,30 +10,66 @@ export default function Storefront() {
   const products = {
     men: [
       {
-        id: "men-1",
+        id: "men-tee-1",
         name: "JUSTTOPRINT T-Shirt",
         price: 19.99,
-        subtitle: "First drop essential",
+        subtitle: "Essential logo piece",
       },
       {
-        id: "men-2",
-        name: "Minimal Crest Cap",
+        id: "men-tee-2",
+        name: "Heritage Script T-Shirt",
+        price: 21.99,
+        subtitle: "Soft everyday jersey",
+      },
+      {
+        id: "men-tee-3",
+        name: "Punjab Studio Tee",
         price: 22.99,
-        subtitle: "Everyday uniform",
+        subtitle: "Minimal editorial fit",
+      },
+      {
+        id: "men-hoodie-1",
+        name: "Quiet Confidence Hoodie",
+        price: 34.99,
+        subtitle: "Heavyweight brushed cotton",
+      },
+      {
+        id: "men-hoodie-2",
+        name: "Core Street Hoodie",
+        price: 36.99,
+        subtitle: "Relaxed premium silhouette",
       },
     ],
     women: [
       {
-        id: "women-1",
+        id: "women-tee-1",
         name: "JUSTTOPRINT T-Shirt",
         price: 19.99,
-        subtitle: "First drop essential",
+        subtitle: "Essential logo piece",
       },
       {
-        id: "women-2",
-        name: "Minimal Crest Cap",
+        id: "women-tee-2",
+        name: "Signature Script T-Shirt",
+        price: 21.99,
+        subtitle: "Soft everyday jersey",
+      },
+      {
+        id: "women-tee-3",
+        name: "Quiet Form Tee",
         price: 22.99,
-        subtitle: "Everyday uniform",
+        subtitle: "Minimal editorial fit",
+      },
+      {
+        id: "women-hoodie-1",
+        name: "Quiet Confidence Hoodie",
+        price: 34.99,
+        subtitle: "Heavyweight brushed cotton",
+      },
+      {
+        id: "women-hoodie-2",
+        name: "Core Street Hoodie",
+        price: 36.99,
+        subtitle: "Relaxed premium silhouette",
       },
     ],
   };
@@ -56,11 +92,12 @@ export default function Storefront() {
             Minimal streetwear with a quiet editorial attitude.
           </p>
 
-          <div className="mt-12 flex items-center justify-center gap-5 sm:gap-8 text-[10px] sm:text-[11px] uppercase tracking-[0.34em]">
+          <div className="mt-12 flex items-center justify-center gap-5 sm:gap-8 text-[10px] sm:text-[11px] uppercase tracking-[0.34em] select-none">
             <button
               type="button"
+              onMouseDown={(e) => e.preventDefault()}
               onClick={() => setTab("men")}
-              className={`transition ${
+              className={`appearance-none bg-transparent border-0 outline-none ring-0 shadow-none transition ${
                 tab === "men"
                   ? "text-black"
                   : "text-black/28 hover:text-black/55"
@@ -73,8 +110,9 @@ export default function Storefront() {
 
             <button
               type="button"
+              onMouseDown={(e) => e.preventDefault()}
               onClick={() => setTab("women")}
-              className={`transition ${
+              className={`appearance-none bg-transparent border-0 outline-none ring-0 shadow-none transition ${
                 tab === "women"
                   ? "text-black"
                   : "text-black/28 hover:text-black/55"
@@ -126,8 +164,9 @@ export default function Storefront() {
 
                   <button
                     type="button"
+                    onMouseDown={(e) => e.preventDefault()}
                     onClick={() => addItem(p)}
-                    className="mt-8 inline-block text-[10px] sm:text-[11px] uppercase tracking-[0.34em] text-black border-b border-black pb-1 hover:opacity-60 transition"
+                    className="appearance-none bg-transparent border-0 outline-none ring-0 shadow-none mt-8 inline-block text-[10px] sm:text-[11px] uppercase tracking-[0.34em] text-black border-b border-black pb-1 hover:opacity-60 transition"
                   >
                     Add to cart
                   </button>
