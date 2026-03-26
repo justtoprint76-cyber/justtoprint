@@ -42,7 +42,7 @@ export default function Storefront() {
 
         {/* HEADER */}
         <div className="text-center">
-          <p className="text-[11px] tracking-[0.3em] text-black/50">
+          <p className="text-[11px] tracking-[0.35em] text-black/50">
             JUSTTOPRINT
           </p>
 
@@ -50,21 +50,31 @@ export default function Storefront() {
             First Drop
           </h2>
 
-          {/* TABS */}
-          <div className="mt-10 flex justify-center gap-10 text-[12px] tracking-[0.3em]">
-            <button
+          {/* TABS PREMIUM */}
+          <div className="mt-12 flex justify-center gap-8 text-[11px] tracking-[0.35em] uppercase">
+            <span
               onClick={() => setTab("men")}
-              className={tab === "men" ? "text-black" : "text-black/40"}
+              className={`cursor-pointer transition ${
+                tab === "men"
+                  ? "text-black"
+                  : "text-black/30 hover:text-black/60"
+              }`}
             >
-              MEN
-            </button>
+              Men
+            </span>
 
-            <button
+            <span className="text-black/20">/</span>
+
+            <span
               onClick={() => setTab("women")}
-              className={tab === "women" ? "text-black" : "text-black/40"}
+              className={`cursor-pointer transition ${
+                tab === "women"
+                  ? "text-black"
+                  : "text-black/30 hover:text-black/60"
+              }`}
             >
-              WOMEN
-            </button>
+              Women
+            </span>
           </div>
         </div>
 
@@ -73,7 +83,7 @@ export default function Storefront() {
           {visible.map((p) => (
             <div key={p.id} className="text-center">
 
-              {/* IMAGE PLACEHOLDER */}
+              {/* IMAGE (placeholder) */}
               <div className="w-full h-[320px] bg-[#EDE5DA] mb-6" />
 
               {/* NAME */}
@@ -89,7 +99,7 @@ export default function Storefront() {
               {/* BUTTON */}
               <button
                 onClick={() => addItem(p)}
-                className="mt-6 text-[11px] tracking-[0.3em] uppercase border-b border-black pb-1 hover:opacity-60 transition"
+                className="mt-6 text-[11px] tracking-[0.35em] uppercase border-b border-black pb-1 hover:opacity-60 transition"
               >
                 Add to cart
               </button>
