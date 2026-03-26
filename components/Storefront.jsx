@@ -35,7 +35,7 @@ export default function Storefront() {
 
   return (
     <section id="shop" className="bg-[#F3EDE4] text-black">
-      <div className="max-w-[1320px] mx-auto px-5 sm:px-8 lg:px-10 py-24 sm:py-32">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
         <div className="text-center">
           <p className="text-[10px] sm:text-[11px] uppercase tracking-[0.38em] text-black/40">
             JUSTTOPRINT
@@ -54,7 +54,7 @@ export default function Storefront() {
         {/* MEN / WOMEN BLOCKS */}
         <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-6">
           <Link href="/men" className="group block">
-            <div className="relative h-[300px] md:h-[380px] overflow-hidden bg-[#E8DED1]">
+            <div className="relative h-[320px] md:h-[420px] overflow-hidden bg-[#E8DED1]">
               <div className="absolute inset-0 bg-black/5 group-hover:bg-black/10 transition" />
 
               <div className="absolute inset-0 flex items-center justify-center">
@@ -68,7 +68,7 @@ export default function Storefront() {
           </Link>
 
           <Link href="/women" className="group block">
-            <div className="relative h-[300px] md:h-[380px] overflow-hidden bg-[#E8DED1]">
+            <div className="relative h-[320px] md:h-[420px] overflow-hidden bg-[#E8DED1]">
               <div className="absolute inset-0 bg-black/5 group-hover:bg-black/10 transition" />
 
               <div className="absolute inset-0 flex items-center justify-center">
@@ -83,18 +83,18 @@ export default function Storefront() {
         </div>
 
         {/* 4 FEATURED PRODUCTS LARGE */}
-        <div className="mt-24 sm:mt-28 lg:mt-32 space-y-20 sm:space-y-24 lg:space-y-28">
+        <div className="mt-24 sm:mt-28 lg:mt-32 space-y-24 sm:space-y-28 lg:space-y-32">
           {featuredProducts.map((product, index) => (
             <article key={product.id}>
               <div
-                className={`grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-end ${
+                className={`grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-end ${
                   index % 2 === 1
                     ? "lg:[&_.media]:order-2 lg:[&_.info]:order-1"
                     : ""
                 }`}
               >
-                <div className="media lg:col-span-8">
-                  <div className="relative aspect-[4/5] md:aspect-[16/18] overflow-hidden bg-[#E8DED1]">
+                <div className="media lg:col-span-9">
+                  <div className="relative aspect-[3/4] overflow-hidden bg-[#E8DED1]">
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.45),_transparent_38%),linear-gradient(180deg,_#efe7dc_0%,_#e6dbce_45%,_#ddd0c0_100%)]" />
 
                     <div className="absolute inset-x-0 bottom-0 h-[22%] bg-gradient-to-t from-black/[0.05] to-transparent" />
@@ -109,12 +109,12 @@ export default function Storefront() {
                   </div>
                 </div>
 
-                <div className="info lg:col-span-4 lg:max-w-[340px]">
+                <div className="info lg:col-span-3 lg:max-w-[300px]">
                   <p className="text-[10px] sm:text-[11px] uppercase tracking-[0.3em] text-black/32">
                     {product.subtitle}
                   </p>
 
-                  <h3 className="mt-4 text-[30px] sm:text-[38px] lg:text-[44px] leading-[1.04] font-serif tracking-[0.01em]">
+                  <h3 className="mt-4 text-[30px] sm:text-[40px] lg:text-[46px] leading-[1.02] font-serif tracking-[0.01em]">
                     {product.name}
                   </h3>
 
