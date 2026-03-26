@@ -113,3 +113,30 @@ a:focus-visible {
   outline: none !important;
   box-shadow: none !important;
 }
+/* REMOVE ALL UGLY CLICK / FOCUS STYLES */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+a,
+input,
+textarea,
+select {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+button:focus,
+button:focus-visible,
+a:focus,
+a:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* remove iOS gray highlight */
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
