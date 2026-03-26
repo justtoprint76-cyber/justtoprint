@@ -46,7 +46,7 @@ body {
   }
 }
 
-/* Reset pulito per look premium */
+/* Reset pulito */
 h1,
 h2,
 h3,
@@ -87,7 +87,6 @@ button:hover {
   opacity: 0.75;
 }
 
-/* Hero */
 .hero {
   display: flex;
   align-items: center;
@@ -96,7 +95,6 @@ button:hover {
   min-height: 100vh;
 }
 
-/* Footer */
 footer {
   text-align: center;
   padding: 20px 0;
