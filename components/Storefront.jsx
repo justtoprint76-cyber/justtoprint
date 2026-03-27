@@ -8,31 +8,43 @@ export default function Storefront() {
 
   const featuredProducts = [
     {
-      id: "home-1",
+      id: "home-men-tee",
       name: "JUSTTOPRINT T-Shirt",
-      price: 19.99,
-      subtitle: "Men / T-Shirt",
+      category: "Men / T-Shirt",
+      theme: "Identity",
+      description:
+        "A clean essential inspired by contemporary Punjabi identity — simple, direct, and built to carry culture without excess.",
+      cta: "Add to cart",
       align: "right",
     },
     {
-      id: "home-2",
+      id: "home-women-hoodie",
       name: "Quiet Confidence Hoodie",
-      price: 34.99,
-      subtitle: "Women / Hoodie",
+      category: "Women / Hoodie",
+      theme: "Presence",
+      description:
+        "Designed around softness and strength, this hoodie reflects a quiet presence — understated, grounded, and intentionally modern.",
+      cta: "Add to cart",
       align: "left",
     },
     {
-      id: "home-3",
+      id: "home-women-tee",
       name: "Heritage Script T-Shirt",
-      price: 21.99,
-      subtitle: "Women / T-Shirt",
+      category: "Women / T-Shirt",
+      theme: "Heritage",
+      description:
+        "A lighter editorial piece shaped by heritage references and minimal typography, balancing memory with a more refined silhouette.",
+      cta: "Add to cart",
       align: "right",
     },
     {
-      id: "home-4",
+      id: "home-men-hoodie",
       name: "Core Street Hoodie",
-      price: 36.99,
-      subtitle: "Men / Hoodie",
+      category: "Men / Hoodie",
+      theme: "Uniform",
+      description:
+        "Built as an everyday layer, this piece takes cues from street uniform dressing — functional, calm, and rooted in cultural continuity.",
+      cta: "Add to cart",
       align: "left",
     },
   ];
@@ -40,7 +52,6 @@ export default function Storefront() {
   return (
     <section id="shop" className="bg-[#F3EDE4] text-black">
       <div className="w-full px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
-        {/* HEADER */}
         <div className="text-center max-w-3xl mx-auto">
           <p className="text-[11px] uppercase tracking-[0.35em] text-black/40">
             JUSTTOPRINT
@@ -87,7 +98,7 @@ export default function Storefront() {
           </Link>
         </div>
 
-        {/* HUGE MAGAZINE BANNERS */}
+        {/* EDITORIAL FEATURES */}
         <div className="mt-28 space-y-10 sm:space-y-14 lg:space-y-16">
           {featuredProducts.map((product, index) => {
             const isRight = product.align === "right";
@@ -106,33 +117,46 @@ export default function Storefront() {
                   </div>
 
                   <div
-                    className={`absolute top-1/2 -translate-y-1/2 w-[82%] sm:w-[58%] lg:w-[42%] xl:w-[36%] ${
+                    className={`absolute top-1/2 -translate-y-1/2 w-[82%] sm:w-[56%] lg:w-[40%] xl:w-[34%] ${
                       isRight
                         ? "right-6 sm:right-8 lg:right-12 text-right"
                         : "left-6 sm:left-8 lg:left-12 text-left"
                     }`}
                   >
                     <p className="text-[10px] sm:text-[11px] uppercase tracking-[0.32em] text-black/38">
-                      {product.subtitle}
+                      {product.category}
                     </p>
 
                     <h3 className="mt-4 text-[40px] sm:text-[58px] lg:text-[78px] xl:text-[96px] leading-[0.94] font-serif text-black">
                       {product.name}
                     </h3>
 
-                    <p className="mt-5 text-[15px] sm:text-[17px] lg:text-[18px] text-black/55">
-                      €{product.price.toFixed(2)}
+                    <p className="mt-6 text-[10px] sm:text-[11px] uppercase tracking-[0.32em] text-black/38">
+                      {product.theme}
+                    </p>
+
+                    <p className="mt-4 text-[14px] sm:text-[16px] lg:text-[17px] leading-relaxed text-black/58">
+                      {product.description}
                     </p>
 
                     <button
                       type="button"
                       onMouseDown={(e) => e.preventDefault()}
-                      onClick={() => addItem(product)}
-                      className={`mt-7 inline-block text-[10px] sm:text-[11px] uppercase tracking-[0.34em] border-b border-black pb-1 hover:opacity-60 transition ${
+                      onClick={() =>
+                        addItem({
+                          id: product.id,
+                          name: product.name,
+                          price:
+                            product.id === "home-men-tee" || product.id === "home-women-tee"
+                              ? 19.99
+                              : 34.99,
+                        })
+                      }
+                      className={`mt-8 inline-block text-[10px] sm:text-[11px] uppercase tracking-[0.34em] border-b border-black pb-1 hover:opacity-60 transition ${
                         isRight ? "ml-auto" : ""
                       }`}
                     >
-                      Add to cart
+                      {product.cta}
                     </button>
                   </div>
                 </div>
@@ -141,7 +165,6 @@ export default function Storefront() {
           })}
         </div>
 
-        {/* LINKS */}
         <div className="mt-24 flex justify-center gap-10 text-[11px] uppercase tracking-[0.3em]">
           <Link href="/men" className="border-b border-black pb-1 hover:opacity-60">
             Explore Men
