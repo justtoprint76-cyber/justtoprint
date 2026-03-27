@@ -33,27 +33,30 @@ export default function Home() {
       <HomePage />
 
       <section className="bg-[#F3EDE4] text-[#4A463F] px-6">
-        <div className="max-w-5xl mx-auto pt-24 pb-14 text-center">
-          <p className="text-[12px] tracking-[0.22em] text-[#9A9388]">
-            THE COLLECTION
-          </p>
+        <div className="max-w-5xl mx-auto pt-16 sm:pt-20 pb-6 sm:pb-8 text-center">
+          <div className="flex items-center justify-center">
+            <div className="w-full max-w-[280px] h-px bg-[#D9D0C3]" />
+          </div>
 
-          <h2
-            className="mt-6 text-[28px] sm:text-[34px] leading-[1.2] tracking-[0.04em]"
-            style={{ fontFamily: "serif", color: "#6B6256" }}
-          >
-            Explore the pieces.
-          </h2>
+          <div className="mt-8 flex items-center justify-center gap-8 sm:gap-10 text-[10px] sm:text-[11px] uppercase tracking-[0.34em] text-black/70">
+            <a
+              href="/men"
+              className="border-b border-black/40 pb-1 hover:opacity-60 transition"
+            >
+              Men
+            </a>
 
-          <p className="mt-6 text-[15px] leading-relaxed text-[#7A7267] max-w-[62ch] mx-auto">
-            Designed with intention — modern silhouettes, cultural roots.
-          </p>
-
-          <div className="mt-12 h-px w-full bg-[#D9D0C3]" />
+            <a
+              href="/women"
+              className="border-b border-black/40 pb-1 hover:opacity-60 transition"
+            >
+              Women
+            </a>
+          </div>
         </div>
       </section>
 
-      <div id="shop" className="bg-[#F3EDE4] px-6 pt-8 pb-24">
+      <div id="shop" className="bg-[#F3EDE4] px-6 pt-2 pb-24">
         <div className="max-w-5xl mx-auto">
           <Storefront />
         </div>
