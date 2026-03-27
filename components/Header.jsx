@@ -26,10 +26,18 @@ export default function Header() {
           <div className="flex flex-col items-center gap-3 sm:gap-4 md:flex-row md:justify-between md:gap-0">
             <nav className="flex-1 flex justify-center">
               <ul className="flex flex-wrap justify-center items-center gap-x-5 gap-y-2 md:gap-x-10 md:gap-y-3 text-[10px] md:text-xs uppercase tracking-[0.22em] text-black">
-                <li><Link href="/">Home</Link></li>
-                <li><Link href="/#shop">Shop</Link></li>
-                <li><Link href="/about">About</Link></li>
-                <li><Link href="/contact">Contact</Link></li>
+                <li>
+                  <Link href="/">Home</Link>
+                </li>
+                <li>
+                  <Link href="/#shop">Shop</Link>
+                </li>
+                <li>
+                  <Link href="/about">About</Link>
+                </li>
+                <li>
+                  <Link href="/contact">Contact</Link>
+                </li>
               </ul>
             </nav>
 
@@ -55,7 +63,7 @@ export default function Header() {
             <img
               src="/justtoprint-logo.png"
               alt="JUSTTOPRINT"
-              className="h-7 sm:h-8 md:h-10 w-auto object-contain"
+              className="h-9 sm:h-8 md:h-10 w-auto object-contain"
             />
           </Link>
 
