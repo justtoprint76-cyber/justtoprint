@@ -51,31 +51,30 @@ export default function Storefront() {
 
   return (
     <section id="shop" className="bg-[#F3EDE4] text-black">
-      <div className="w-full px-4 sm:px-6 lg:px-8 py-16 sm:py-32">
-        {/* HEADER */}
+      <div className="w-full px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
         <div className="text-center max-w-3xl mx-auto">
-          <p className="text-[10px] sm:text-[11px] uppercase tracking-[0.35em] text-black/40">
+          <p className="text-[11px] uppercase tracking-[0.35em] text-black/40">
             JUSTTOPRINT
           </p>
 
-          <h2 className="mt-4 sm:mt-6 text-[34px] sm:text-[58px] lg:text-[72px] leading-none font-serif">
+          <h2 className="mt-6 text-[40px] sm:text-[58px] lg:text-[72px] leading-none font-serif">
             First Drop
           </h2>
 
-          <p className="mt-4 sm:mt-5 text-[13px] sm:text-[16px] leading-relaxed text-black/50 px-2 sm:px-0">
+          <p className="mt-5 text-[14px] sm:text-[16px] leading-relaxed text-black/50">
             A curated preview of the collection — minimal silhouettes, quiet attitude,
             everyday essentials.
           </p>
         </div>
 
-        {/* MEN / WOMEN - ORIZZONTALI ANCHE SU MOBILE */}
-        <div className="mt-12 sm:mt-20 grid grid-cols-2 gap-4 sm:gap-6 max-w-[1800px] mx-auto">
+        {/* MEN / WOMEN - mobile affiancati, desktop uguale a prima */}
+        <div className="mt-12 sm:mt-20 grid grid-cols-2 md:grid-cols-2 gap-4 sm:gap-6 max-w-[1800px] mx-auto">
           <Link href="/men" className="group block">
-            <div className="relative h-[180px] sm:h-[420px] lg:h-[520px] overflow-hidden bg-[#E8DED1]">
+            <div className="relative h-[180px] sm:h-[360px] lg:h-[520px] overflow-hidden bg-[#E8DED1]">
               <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-black/5" />
 
               <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-[12px] sm:text-[22px] tracking-[0.35em] uppercase text-black group-hover:opacity-65 transition">
+                <span className="text-[12px] md:text-[22px] tracking-[0.35em] uppercase text-black group-hover:opacity-65 transition">
                   Men
                 </span>
               </div>
@@ -85,11 +84,11 @@ export default function Storefront() {
           </Link>
 
           <Link href="/women" className="group block">
-            <div className="relative h-[180px] sm:h-[420px] lg:h-[520px] overflow-hidden bg-[#E8DED1]">
+            <div className="relative h-[180px] sm:h-[360px] lg:h-[520px] overflow-hidden bg-[#E8DED1]">
               <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-black/5" />
 
               <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-[12px] sm:text-[22px] tracking-[0.35em] uppercase text-black group-hover:opacity-65 transition">
+                <span className="text-[12px] md:text-[22px] tracking-[0.35em] uppercase text-black group-hover:opacity-65 transition">
                   Women
                 </span>
               </div>
@@ -99,7 +98,7 @@ export default function Storefront() {
           </Link>
         </div>
 
-        {/* 4 BLOCCHI - STESSA IDEA ANCHE SU MOBILE */}
+        {/* EDITORIAL FEATURES */}
         <div className="mt-16 sm:mt-28 space-y-14 sm:space-y-28 lg:space-y-32 max-w-[1900px] mx-auto">
           {featuredProducts.map((product, index) => {
             const imageLeft = product.imageSide === "left";
@@ -107,118 +106,223 @@ export default function Storefront() {
             return (
               <article key={product.id}>
                 {imageLeft ? (
-                  <div className="relative">
-                    {/* IMAGE LEFT */}
-                    <div className="w-[88%] sm:w-[78%]">
-                      <div className="relative h-[240px] sm:h-[560px] lg:h-[760px] xl:h-[860px] overflow-hidden bg-[#E8DED1]">
-                        <div className="absolute inset-0 bg-[linear-gradient(180deg,_rgba(255,255,255,0.16)_0%,_rgba(0,0,0,0.04)_100%)]" />
+                  <>
+                    {/* MOBILE */}
+                    <div className="sm:hidden relative">
+                      <div className="w-[88%]">
+                        <div className="relative h-[240px] overflow-hidden bg-[#E8DED1]">
+                          <div className="absolute inset-0 bg-[linear-gradient(180deg,_rgba(255,255,255,0.16)_0%,_rgba(0,0,0,0.04)_100%)]" />
 
-                        <div className="absolute top-4 left-4 sm:top-8 sm:left-8 text-[10px] sm:text-[11px] uppercase tracking-[0.3em] text-black/35">
-                          {String(index + 1).padStart(2, "0")}
+                          <div className="absolute top-4 left-4 text-[10px] uppercase tracking-[0.3em] text-black/35">
+                            {String(index + 1).padStart(2, "0")}
+                          </div>
+
+                          <div className="absolute bottom-4 left-4 text-[10px] uppercase tracking-[0.3em] text-black/28">
+                            JUSTTOPRINT
+                          </div>
                         </div>
+                      </div>
 
-                        <div className="absolute bottom-4 left-4 sm:bottom-8 sm:left-8 text-[10px] sm:text-[11px] uppercase tracking-[0.3em] text-black/28">
-                          JUSTTOPRINT
+                      <div className="relative z-10 -mt-8 ml-auto w-[78%]">
+                        <div className="bg-[#F3EDE4] p-4">
+                          <p className="text-[10px] uppercase tracking-[0.32em] text-black/38">
+                            {product.category}
+                          </p>
+
+                          <h3 className="mt-3 text-[28px] leading-[0.96] font-serif text-black">
+                            {product.name}
+                          </h3>
+
+                          <p className="mt-4 text-[10px] uppercase tracking-[0.32em] text-black/38">
+                            {product.theme}
+                          </p>
+
+                          <p className="mt-3 text-[14px] leading-relaxed text-black/58">
+                            {product.description}
+                          </p>
+
+                          <button
+                            type="button"
+                            onMouseDown={(e) => e.preventDefault()}
+                            onClick={() =>
+                              addItem({
+                                id: product.id,
+                                name: product.name,
+                                price: product.price,
+                              })
+                            }
+                            className="mt-6 inline-block text-[10px] uppercase tracking-[0.34em] underline underline-offset-4 hover:opacity-60 transition"
+                          >
+                            Add to cart
+                          </button>
                         </div>
                       </div>
                     </div>
 
-                    {/* TEXT RIGHT */}
-                    <div className="relative z-10 -mt-8 sm:-mt-0 ml-auto w-[80%] sm:w-[42%] sm:-ml-20 xl:-ml-28">
-                      <div className="bg-[#F3EDE4] p-4 sm:p-8 lg:p-10">
-                        <p className="text-[10px] sm:text-[11px] uppercase tracking-[0.32em] text-black/38">
-                          {product.category}
-                        </p>
+                    {/* DESKTOP - identico */}
+                    <div className="hidden sm:grid grid-cols-1 lg:grid-cols-12 gap-y-8 lg:gap-y-0 items-center">
+                      <div className="lg:col-span-8">
+                        <div className="relative h-[560px] lg:h-[760px] xl:h-[860px] overflow-hidden bg-[#E8DED1]">
+                          <div className="absolute inset-0 bg-[linear-gradient(180deg,_rgba(255,255,255,0.16)_0%,_rgba(0,0,0,0.04)_100%)]" />
 
-                        <h3 className="mt-3 sm:mt-4 text-[28px] sm:text-[52px] lg:text-[64px] xl:text-[74px] leading-[0.96] font-serif text-black">
-                          {product.name}
-                        </h3>
+                          <div className="absolute top-8 left-8 text-[11px] uppercase tracking-[0.3em] text-black/35">
+                            {String(index + 1).padStart(2, "0")}
+                          </div>
 
-                        <p className="mt-4 sm:mt-6 text-[10px] sm:text-[11px] uppercase tracking-[0.32em] text-black/38">
-                          {product.theme}
-                        </p>
+                          <div className="absolute bottom-8 left-8 text-[11px] uppercase tracking-[0.3em] text-black/28">
+                            JUSTTOPRINT
+                          </div>
+                        </div>
+                      </div>
 
-                        <p className="mt-3 sm:mt-4 text-[14px] sm:text-[16px] lg:text-[17px] leading-relaxed text-black/58">
-                          {product.description}
-                        </p>
+                      <div className="lg:col-span-4 lg:-ml-20 xl:-ml-28 relative z-10">
+                        <div className="bg-[#F3EDE4] p-8 lg:p-10">
+                          <p className="text-[11px] uppercase tracking-[0.32em] text-black/38">
+                            {product.category}
+                          </p>
 
-                        <button
-                          type="button"
-                          onMouseDown={(e) => e.preventDefault()}
-                          onClick={() =>
-                            addItem({
-                              id: product.id,
-                              name: product.name,
-                              price: product.price,
-                            })
-                          }
-                          className="mt-6 sm:mt-8 inline-block text-[10px] sm:text-[11px] uppercase tracking-[0.34em] underline underline-offset-4 hover:opacity-60 transition"
-                        >
-                          Add to cart
-                        </button>
+                          <h3 className="mt-4 text-[52px] lg:text-[64px] xl:text-[74px] leading-[0.96] font-serif text-black">
+                            {product.name}
+                          </h3>
+
+                          <p className="mt-6 text-[11px] uppercase tracking-[0.32em] text-black/38">
+                            {product.theme}
+                          </p>
+
+                          <p className="mt-4 text-[16px] lg:text-[17px] leading-relaxed text-black/58 max-w-[34ch]">
+                            {product.description}
+                          </p>
+
+                          <button
+                            type="button"
+                            onMouseDown={(e) => e.preventDefault()}
+                            onClick={() =>
+                              addItem({
+                                id: product.id,
+                                name: product.name,
+                                price: product.price,
+                              })
+                            }
+                            className="mt-8 inline-block text-[11px] uppercase tracking-[0.34em] underline underline-offset-4 hover:opacity-60 transition"
+                          >
+                            Add to cart
+                          </button>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </>
                 ) : (
-                  <div className="relative">
-                    {/* IMAGE RIGHT */}
-                    <div className="w-[88%] sm:w-[78%] ml-auto">
-                      <div className="relative h-[240px] sm:h-[560px] lg:h-[760px] xl:h-[860px] overflow-hidden bg-[#E8DED1]">
-                        <div className="absolute inset-0 bg-[linear-gradient(180deg,_rgba(255,255,255,0.16)_0%,_rgba(0,0,0,0.04)_100%)]" />
+                  <>
+                    {/* MOBILE */}
+                    <div className="sm:hidden relative">
+                      <div className="w-[88%] ml-auto">
+                        <div className="relative h-[240px] overflow-hidden bg-[#E8DED1]">
+                          <div className="absolute inset-0 bg-[linear-gradient(180deg,_rgba(255,255,255,0.16)_0%,_rgba(0,0,0,0.04)_100%)]" />
 
-                        <div className="absolute top-4 left-4 sm:top-8 sm:left-8 text-[10px] sm:text-[11px] uppercase tracking-[0.3em] text-black/35">
-                          {String(index + 1).padStart(2, "0")}
+                          <div className="absolute top-4 left-4 text-[10px] uppercase tracking-[0.3em] text-black/35">
+                            {String(index + 1).padStart(2, "0")}
+                          </div>
+
+                          <div className="absolute bottom-4 left-4 text-[10px] uppercase tracking-[0.3em] text-black/28">
+                            JUSTTOPRINT
+                          </div>
                         </div>
+                      </div>
 
-                        <div className="absolute bottom-4 left-4 sm:bottom-8 sm:left-8 text-[10px] sm:text-[11px] uppercase tracking-[0.3em] text-black/28">
-                          JUSTTOPRINT
+                      <div className="relative z-10 -mt-8 w-[78%]">
+                        <div className="bg-[#F3EDE4] p-4 text-left">
+                          <p className="text-[10px] uppercase tracking-[0.32em] text-black/38">
+                            {product.category}
+                          </p>
+
+                          <h3 className="mt-3 text-[28px] leading-[0.96] font-serif text-black">
+                            {product.name}
+                          </h3>
+
+                          <p className="mt-4 text-[10px] uppercase tracking-[0.32em] text-black/38">
+                            {product.theme}
+                          </p>
+
+                          <p className="mt-3 text-[14px] leading-relaxed text-black/58">
+                            {product.description}
+                          </p>
+
+                          <button
+                            type="button"
+                            onMouseDown={(e) => e.preventDefault()}
+                            onClick={() =>
+                              addItem({
+                                id: product.id,
+                                name: product.name,
+                                price: product.price,
+                              })
+                            }
+                            className="mt-6 inline-block text-[10px] uppercase tracking-[0.34em] underline underline-offset-4 hover:opacity-60 transition"
+                          >
+                            Add to cart
+                          </button>
                         </div>
                       </div>
                     </div>
 
-                    {/* TEXT LEFT */}
-                    <div className="relative z-10 -mt-8 sm:-mt-0 w-[80%] sm:w-[42%] sm:-mr-20 xl:-mr-28">
-                      <div className="bg-[#F3EDE4] p-4 sm:p-8 lg:p-10 text-left">
-                        <p className="text-[10px] sm:text-[11px] uppercase tracking-[0.32em] text-black/38">
-                          {product.category}
-                        </p>
+                    {/* DESKTOP - identico */}
+                    <div className="hidden sm:grid grid-cols-1 lg:grid-cols-12 gap-y-8 lg:gap-y-0 items-center">
+                      <div className="lg:col-span-4 lg:-mr-20 xl:-mr-28 relative z-10 order-2 lg:order-1">
+                        <div className="bg-[#F3EDE4] p-8 lg:p-10 text-left">
+                          <p className="text-[11px] uppercase tracking-[0.32em] text-black/38">
+                            {product.category}
+                          </p>
 
-                        <h3 className="mt-3 sm:mt-4 text-[28px] sm:text-[52px] lg:text-[64px] xl:text-[74px] leading-[0.96] font-serif text-black">
-                          {product.name}
-                        </h3>
+                          <h3 className="mt-4 text-[52px] lg:text-[64px] xl:text-[74px] leading-[0.96] font-serif text-black">
+                            {product.name}
+                          </h3>
 
-                        <p className="mt-4 sm:mt-6 text-[10px] sm:text-[11px] uppercase tracking-[0.32em] text-black/38">
-                          {product.theme}
-                        </p>
+                          <p className="mt-6 text-[11px] uppercase tracking-[0.32em] text-black/38">
+                            {product.theme}
+                          </p>
 
-                        <p className="mt-3 sm:mt-4 text-[14px] sm:text-[16px] lg:text-[17px] leading-relaxed text-black/58">
-                          {product.description}
-                        </p>
+                          <p className="mt-4 text-[16px] lg:text-[17px] leading-relaxed text-black/58 max-w-[34ch]">
+                            {product.description}
+                          </p>
 
-                        <button
-                          type="button"
-                          onMouseDown={(e) => e.preventDefault()}
-                          onClick={() =>
-                            addItem({
-                              id: product.id,
-                              name: product.name,
-                              price: product.price,
-                            })
-                          }
-                          className="mt-6 sm:mt-8 inline-block text-[10px] sm:text-[11px] uppercase tracking-[0.34em] underline underline-offset-4 hover:opacity-60 transition"
-                        >
-                          Add to cart
-                        </button>
+                          <button
+                            type="button"
+                            onMouseDown={(e) => e.preventDefault()}
+                            onClick={() =>
+                              addItem({
+                                id: product.id,
+                                name: product.name,
+                                price: product.price,
+                              })
+                            }
+                            className="mt-8 inline-block text-[11px] uppercase tracking-[0.34em] underline underline-offset-4 hover:opacity-60 transition"
+                          >
+                            Add to cart
+                          </button>
+                        </div>
+                      </div>
+
+                      <div className="lg:col-span-8 order-1 lg:order-2">
+                        <div className="relative h-[560px] lg:h-[760px] xl:h-[860px] overflow-hidden bg-[#E8DED1]">
+                          <div className="absolute inset-0 bg-[linear-gradient(180deg,_rgba(255,255,255,0.16)_0%,_rgba(0,0,0,0.04)_100%)]" />
+
+                          <div className="absolute top-8 left-8 text-[11px] uppercase tracking-[0.3em] text-black/35">
+                            {String(index + 1).padStart(2, "0")}
+                          </div>
+
+                          <div className="absolute bottom-8 left-8 text-[11px] uppercase tracking-[0.3em] text-black/28">
+                            JUSTTOPRINT
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </>
                 )}
               </article>
             );
           })}
         </div>
 
-        {/* LINKS */}
         <div className="mt-16 sm:mt-24 flex justify-center gap-6 sm:gap-10 text-[10px] sm:text-[11px] uppercase tracking-[0.3em]">
           <Link href="/men" className="border-b border-black pb-1 hover:opacity-60 transition">
             Explore Men
