@@ -67,15 +67,18 @@ export default function Storefront() {
           </p>
         </div>
 
+        {/* MEN / WOMEN */}
         <div className="mt-12 sm:mt-20 grid grid-cols-2 gap-4 sm:gap-6 max-w-[1800px] mx-auto">
           <Link href="/men" className="group block">
             <div className="relative h-[180px] sm:h-[360px] lg:h-[520px] overflow-hidden bg-[#E8DED1]">
               <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-black/5" />
+
               <div className="absolute inset-0 flex items-center justify-center">
                 <span className="text-[12px] md:text-[22px] tracking-[0.35em] uppercase text-black group-hover:opacity-65 transition">
                   Men
                 </span>
               </div>
+
               <div className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 w-10 sm:w-14 h-[1px] bg-black/30 group-hover:w-20 sm:group-hover:w-24 transition-all duration-300" />
             </div>
           </Link>
@@ -83,16 +86,19 @@ export default function Storefront() {
           <Link href="/women" className="group block">
             <div className="relative h-[180px] sm:h-[360px] lg:h-[520px] overflow-hidden bg-[#E8DED1]">
               <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-black/5" />
+
               <div className="absolute inset-0 flex items-center justify-center">
                 <span className="text-[12px] md:text-[22px] tracking-[0.35em] uppercase text-black group-hover:opacity-65 transition">
                   Women
                 </span>
               </div>
+
               <div className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 w-10 sm:w-14 h-[1px] bg-black/30 group-hover:w-20 sm:group-hover:w-24 transition-all duration-300" />
             </div>
           </Link>
         </div>
 
+        {/* EDITORIAL FEATURES - SFALSATI */}
         <div className="mt-16 sm:mt-28 space-y-14 sm:space-y-28 lg:space-y-32 max-w-[1900px] mx-auto">
           {featuredProducts.map((product, index) => {
             const imageLeft = product.imageSide === "left";
@@ -101,18 +107,22 @@ export default function Storefront() {
               <article key={product.id}>
                 {imageLeft ? (
                   <div className="relative">
+                    {/* IMAGE LEFT */}
                     <div className="w-[88%] sm:w-[78%]">
                       <div className="relative h-[240px] sm:h-[560px] lg:h-[760px] xl:h-[860px] overflow-hidden bg-[#E8DED1]">
                         <div className="absolute inset-0 bg-[linear-gradient(180deg,_rgba(255,255,255,0.16)_0%,_rgba(0,0,0,0.04)_100%)]" />
+
                         <div className="absolute top-4 sm:top-8 left-4 sm:left-8 text-[10px] sm:text-[11px] uppercase tracking-[0.3em] text-black/35">
                           {String(index + 1).padStart(2, "0")}
                         </div>
+
                         <div className="absolute bottom-4 sm:bottom-8 left-4 sm:left-8 text-[10px] sm:text-[11px] uppercase tracking-[0.3em] text-black/28">
                           JUSTTOPRINT
                         </div>
                       </div>
                     </div>
 
+                    {/* TEXT RIGHT - SFALSATO */}
                     <div className="relative z-10 -mt-8 sm:-mt-0 ml-auto w-[78%] sm:w-[42%] sm:-ml-20 xl:-ml-28">
                       <div className="bg-[#F3EDE4] p-4 sm:p-8 lg:p-10">
                         <p className="text-[10px] sm:text-[11px] uppercase tracking-[0.32em] text-black/38">
@@ -150,18 +160,22 @@ export default function Storefront() {
                   </div>
                 ) : (
                   <div className="relative">
+                    {/* IMAGE RIGHT */}
                     <div className="w-[88%] sm:w-[78%] ml-auto">
                       <div className="relative h-[240px] sm:h-[560px] lg:h-[760px] xl:h-[860px] overflow-hidden bg-[#E8DED1]">
                         <div className="absolute inset-0 bg-[linear-gradient(180deg,_rgba(255,255,255,0.16)_0%,_rgba(0,0,0,0.04)_100%)]" />
+
                         <div className="absolute top-4 sm:top-8 left-4 sm:left-8 text-[10px] sm:text-[11px] uppercase tracking-[0.3em] text-black/35">
                           {String(index + 1).padStart(2, "0")}
                         </div>
+
                         <div className="absolute bottom-4 sm:bottom-8 left-4 sm:left-8 text-[10px] sm:text-[11px] uppercase tracking-[0.3em] text-black/28">
                           JUSTTOPRINT
                         </div>
                       </div>
                     </div>
 
+                    {/* TEXT LEFT - SFALSATO */}
                     <div className="relative z-10 -mt-8 sm:-mt-0 w-[78%] sm:w-[42%] sm:-mr-20 xl:-mr-28">
                       <div className="bg-[#F3EDE4] p-4 sm:p-8 lg:p-10 text-left">
                         <p className="text-[10px] sm:text-[11px] uppercase tracking-[0.32em] text-black/38">
