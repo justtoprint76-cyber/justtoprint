@@ -25,9 +25,8 @@ export default function HomePage() {
     >
       <Header compact={compact} />
 
-      {/* HERO */}
-      <main className="flex flex-col items-center text-center px-4 sm:px-6 pt-6 sm:pt-10 md:pt-16">
-        {/* LOGO grande */}
+      <main className="flex flex-col items-center text-center px-4 sm:px-6 pt-2 sm:pt-6 md:pt-10">
+        {/* LOGO */}
         <div className="jtp-logo-box hero-logo">
           <img
             src="/justtoprint-logo.png"
@@ -53,8 +52,8 @@ export default function HomePage() {
       <style jsx>{`
         .jtp-logo-box {
           width: 100%;
-          max-width: 1150px;
-          height: 320px;
+          max-width: 1220px;
+          height: 300px;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -67,6 +66,11 @@ export default function HomePage() {
           height: 100%;
           object-fit: contain;
           display: block;
+          filter:
+            drop-shadow(0 1px 0 rgba(255, 248, 235, 0.95))
+            drop-shadow(0 2px 2px rgba(164, 142, 102, 0.25))
+            drop-shadow(0 8px 16px rgba(148, 126, 92, 0.18))
+            drop-shadow(0 0 10px rgba(214, 192, 150, 0.28));
         }
 
         .hero-logo {
@@ -80,7 +84,7 @@ export default function HomePage() {
           transform: translateY(18px);
           animation: heroFadeUp 0.9s ease-out forwards;
           animation-delay: 0.35s;
-          margin-top: -28px;
+          margin-top: -18px;
         }
 
         @keyframes heroFadeUp {
@@ -90,20 +94,26 @@ export default function HomePage() {
           }
         }
 
-        /* MOBILE ONLY */
+        /* MOBILE */
         @media (max-width: 639px) {
           .jtp-logo-box {
-            height: 250px;
-            margin-top: 8px;
+            height: 170px;
+            max-width: 100%;
+            margin-top: 0;
           }
 
           .jtp-logo-img {
-            transform: scale(1.38);
-            transform-origin: center top;
+            transform: scale(1.06);
+            transform-origin: center center;
+            filter:
+              drop-shadow(0 1px 0 rgba(255, 248, 235, 0.95))
+              drop-shadow(0 2px 2px rgba(164, 142, 102, 0.22))
+              drop-shadow(0 6px 12px rgba(148, 126, 92, 0.16))
+              drop-shadow(0 0 8px rgba(214, 192, 150, 0.22));
           }
 
           .hero-text {
-            margin-top: -10px;
+            margin-top: -2px;
             padding-left: 10px;
             padding-right: 10px;
           }
@@ -112,12 +122,28 @@ export default function HomePage() {
         /* TABLET */
         @media (min-width: 640px) and (max-width: 1023px) {
           .jtp-logo-box {
-            height: 300px;
+            height: 240px;
             margin-top: 0;
           }
 
           .jtp-logo-img {
-            transform: scale(1.12);
+            transform: scale(1.04);
+            transform-origin: center center;
+          }
+
+          .hero-text {
+            margin-top: -10px;
+          }
+        }
+
+        /* DESKTOP LARGE */
+        @media (min-width: 1024px) {
+          .jtp-logo-box {
+            height: 340px;
+          }
+
+          .jtp-logo-img {
+            transform: scale(1.02);
             transform-origin: center center;
           }
         }
